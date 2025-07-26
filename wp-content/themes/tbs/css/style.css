@@ -1,0 +1,1273 @@
+/* Black */
+html {
+    font-size: 0.69444444444vw;
+    vertical-align: baseline;
+  }
+  
+  @media screen and (min-width: 2560px) {
+    html {
+      font-size: 17.7777777778px;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    html {
+      font-size: 1.1990407674vw;
+    }
+  }
+  
+  /* @media screen and (min-device-aspect-ratio: 1912/1080) {
+    @media screen and (min-width: 991px) {
+      html {
+        font-size: 1vh;
+      }
+    }
+  } */
+  
+  @media screen and (max-width: 767px) {
+    html {
+      font-size: 2.5445292621vw;
+    }
+  
+    .no-br br {
+      display: none;
+    }
+     br{
+      display: none !important
+    }
+  }
+  .kl-container {
+    max-width: 2560px;
+    padding-inline: 12rem;
+    width: 100%;
+    margin-inline: auto;
+  }
+  @media only screen and (max-width: 991px) {
+    .kl-container {
+      padding-inline: 4rem !important;
+    }
+   }
+   @media only screen and (max-width: 767px) {
+    .kl-container {
+      padding-inline: 2rem !important;
+    }
+   }
+  @font-face {
+    font-family: 'Roboto-italic';
+    src: url('../fonts/Roboto-BoldItalic.ttf') format('opentype');
+    font-weight: 600;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Roboto-italic';
+    src: url('../fonts/Roboto-MediumItalic.ttf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Roboto-italic';
+    src: url('../fonts/Roboto-Light.ttf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Roboto-italic';
+    src: url('../fonts/Roboto-LightItalic.ttf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.ttf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'FZ Poppins';
+    src: url('../fonts/FZ Poppins-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'FZ Poppins';
+    src: url('../fonts/FZ Poppins-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'FZ Poppins';
+    src: url('../fonts/FZ Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'FZ Poppins';
+    src: url('../fonts/FZ Poppins-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif !important;
+  }
+  .fs-18 {
+    font-size: 1.8rem !important;
+  }
+  @media screen and (min-width: 1200px) {
+    .fs-36 {
+      font-size: 3.6rem !important;
+    }
+    .fs-64 {
+      font-size: 6.4rem !important;
+    }
+    .fs-56 {
+      font-size: 5.6rem !important;
+    }
+  }
+  .main-header {
+    width: 100%;
+    background: none;
+    padding: 1.5rem 0;
+    color: white;
+    position: fixed;
+    z-index: 999;
+  }
+  
+  #mainHeader {
+    background-color: transparent;
+    transition: background-color 1s ease, transform 0.3s ease;
+    z-index: 999;
+    background-color: transparent;
+  }
+  .header-hidden {
+    transform: translateY(-100%);
+    background-color: transparent;
+  }
+  
+  .header-visible {
+    transform: translateY(0);
+    background-color: #193e54 !important;
+  }
+  
+  .main-header .nav-link {
+    color: white;
+    font-weight: 500;
+    padding: 0.8rem 0 0.8rem 0;
+    text-transform: uppercase;
+    font-size: 1.44rem;
+  }
+  #mainHeader .nav {
+    gap: 5.6rem;
+  }
+  
+  a:hover {
+    color: #c48c5e !important;
+  }
+  
+  .nav-item-about a {
+    transition: color 0.3s ease;
+  }
+  .nav-item-about a:hover {
+    color: #eadfdf !important;
+  }
+  
+  .total_hero_start {
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+  }
+  
+  .main-header .nav-link.active {
+    color: #c48c5e; /* màu cam cho TRANG CHỦ */
+  }
+  .quote {
+    margin-bottom: 4rem;
+  }
+  .quote svg {
+    width: 5.5rem;
+  }
+  
+  .main-header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f5b042;
+    text-align: center;
+    width: 8.9rem;
+    margin-inline: 5.6rem;
+    img {
+      width: 100%;
+    }
+  }
+  
+  .main-header .language-selector {
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  
+  
+  @media (max-width: 991px) {
+    .nav-center-logo {
+      position: static;
+      transform: none;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+  
+  .hero-banner {
+    /*top: -70px;*/
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .img-banner {
+    width: 100%;
+    height: 90vh;
+    display: block;
+    object-fit: fill;
+    filter: brightness(80%);
+    object-fit: cover;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
+  .hero-content h5 {
+    font-size: 3.3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content h1 {
+    margin-top: 3.2rem;
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+  
+  .hero-stats .stat {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #f5b042;
+  }
+  
+  .hero-stats .label {
+    font-size: 1.6rem;
+    color: #ddd;
+    font-weight: 300;
+  }
+  
+  @media (max-width: 767px) {
+    .hero-content h1 {
+      font-size: 2.8rem;
+    }
+  
+    .hero-stats .stat {
+      font-size: 2.4rem;
+    }
+  }
+  body {
+      color: #333;
+      font-size: 1.8rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      font-family: Roboto;
+      --bs-body-font-size : 1.6rem  !important;
+    }
+    .btn {
+      --bs-btn-font-size: 1.6rem !important
+  
+    }
+  .hero-stats {
+    margin-top: 6rem;
+  }
+  
+  .hero-stats .stat {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #e6ae6c;
+  }
+  
+  .hero-stats .label {
+    font-size: 1.6rem;
+    color: #fff;
+  }
+  .logo img {
+    width: 70%;
+  }
+  
+  .language-selector i:nth-child(2) {
+    font-size: 1.2rem;
+    padding-left: 4px;
+  }
+  .hero-stats {
+    margin-top: 100px !important;
+  }
+  
+  .object-fit-cover {
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  .about_content {
+    padding: 100px !important;
+  }
+  .btn {
+    border-color: #c79156 !important;
+  }
+  
+  a.btn:hover {
+    background: #c79156 !important;
+    color: #ffffff !important;
+  }
+  
+  .about-section .overlay-pattern {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/img_background_nha.png'); /* ảnh lưới mờ phía sau */
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+  }
+  @media (min-width: 767px) {
+    h2 {
+      font-size: 45px !important;
+      font-weight: 300 !important;
+      color: #c79156 !important;
+    }
+  }
+  
+  .about-section p {
+    text-align: justify;
+    font-size: 1.8rem;
+  }
+  .shareholder-section p {
+    font-size: 1.6rem;
+  }
+  .left_brand_message p {
+    font-size: 1.6rem;
+    text-align: justify;
+    width: 70%;
+  }
+  .about-section .btn {
+    color: #555555 !important;
+  }
+  
+  .brand-message {
+    background-color: rgba(26, 61, 84, 1); /* nền xanh đậm */
+    background-image: url('../img/Mask group_brand.png'); /* ảnh lưới nếu cần */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .brand-message h2 {
+    font-size: 4.0rem;
+    color: #c79156 !important;
+  }
+  .brand-message .display-5.text-warning {
+    color: #c79156 !important;
+    font-size: 4.0rem !important;
+  }
+  
+  .circle-icon {
+    flex-direction: column;
+    gap: 2.0rem;
+    padding: 1.7rem;
+    width: 20.0rem;
+    height: 20.0rem;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: #dba45b;
+    font-size: 3.2rem;
+  }
+  .circle-icon svg {
+    width: 7.5rem;
+  }
+  .icon-box.text-center {
+    height: 21.2rem;
+    width: 21.4rem;
+    padding: .5rem;
+    border: .1rem solid #dba45b;
+    border-radius: 50%;
+  }
+  
+  .icon-box p {
+    font-weight: 300;
+    margin-top: 1.0rem;
+    font-size: 1.52rem;
+    color: #dba45b;
+  }
+  
+  .real-estate .property-nav {
+    right: 30%;
+    position: absolute;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    bottom: 10%;
+  }
+  
+  .real-estate .property-nav button {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 1.0rem 1.2rem;
+    border-radius: .4rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .real-estate .property-nav button i {
+    color: #c79156;
+  }
+  
+  .real-estate .property-nav button:hover {
+    background-color: #ffffff;
+  }
+  
+  .right_brand_message .g-4 {
+    --bs-gutter-y: 6.5rem;
+  }
+  
+  .project-box {
+    aspect-ratio: 3 / 4; /* Tự động giữ tỉ lệ ảnh đẹp trên mọi thiết bị */
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .project-box img {
+    object-fit: cover;
+    height: 100%;
+    transition: transform 0.4s ease;
+  }
+  
+  .project-box:hover img {
+    transform: scale(1.05);
+  }
+  
+  .project-title {
+    background: linear-gradient(180deg, rgba(28, 61, 83, 0) 0%, #1c3d53 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 7.0rem 1.5rem 1.5rem 1.5rem;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    font-size: 2.0rem;
+    z-index: 2;
+    /*backdrop-filter: blur(2px);*/
+  }
+  
+  .projects_detail .slick-slide {
+    margin: 0 1.0rem;
+  }
+  
+  .projects_detail .slick-list {
+    padding: 0 10.0rem; /* kéo vùng hiển thị rộng ra 2 bên */
+  }
+  
+  .image-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+  
+  h2,
+  h4,
+  h6 {
+    line-height: 1.3em !important;
+  }
+  h6{
+    font-size: 1.6rem !important;
+  }
+  .btn {
+    font-size: 1.4rem;
+  }
+  .content-box {
+    background-color: #f5f5f5;
+    position: absolute;
+    top: 35%;
+    left: 53%;
+    transform: translateY(-50%);
+    width: 50%;
+    z-index: -1;
+    padding: 7.5rem 9.0rem;
+  }
+  .content-box p {
+    text-align: justify;
+    margin-bottom: 2.0rem !important;
+  }
+  .shareholder-section p {
+    text-align: justify;
+  }
+  
+  .news-card h6 {
+    text-align: justify;
+  }
+  .list-unstyled li a {
+    text-align: justify;
+  }
+  
+  .content-box p.text-muted {
+    margin-bottom: 2rem !important;
+  }
+  @media (max-width: 991px) {
+    .content-box {
+      position: static;
+      transform: none;
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+  
+  .shareholder-section .overlay-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/bg-quan-he-co-dong.png'); /* ảnh vòng tròn mờ nếu có */
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 75%;
+    z-index: 0;
+  }
+  
+  .shareholder-section h2 {
+    margin-bottom: 2.5rem !important;
+  }
+  .shareholder-section p {
+    margin-bottom: 3.5rem !important;
+  }
+  .shareholder-section .left {
+    padding: 0 3.0rem 0 10.0rem;
+  }
+  .object-fit-cover {
+    object-fit: cover;
+    height: 100%;
+  }
+  .shareholder-section {
+    background: #1c3d53;
+  }
+  
+  .news-card {
+    padding: 1.6rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .news-card i {
+    color: #c79156;
+  }
+  
+  .news-card p.text-muted {
+    color: #c79156 !important;
+  }
+  .news-card h6 {
+    color: #555555 !important;
+  }
+  .news_slide .slick-slide {
+    margin: 0 1rem;
+  }
+  .news-card:hover {
+    cursor: pointer;
+    /*transform: translateY(-5px);*/
+    /*box-shadow: 0 10px 20px rgba(0,0,0,0.08);*/
+  }
+  
+  .news-card {
+    padding-left: 0;
+    border-radius: 0;
+    border-right: 1px solid #e0e2e2;
+  }
+  
+  .news-card .img {
+    border-radius: .6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .news-card:hover img {
+    transform: scale(1.2);
+    transition: all 1s ease-in-out;
+  }
+  .news-card .img::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 39%;
+    height: 0%;
+    background: linear-gradient(
+      180deg,
+      #c79156 0%,
+      #1c3d53 100%
+    ); /* nền vàng nhạt có độ mờ */
+    transition: height 0.4s ease;
+    z-index: 1;
+  }
+  
+  .news-card:hover .img::before {
+    height: 100%;
+  }
+  
+  .news-card:hover h6 {
+    color: #c79156 !important;
+  }
+  
+  p.text-muted {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #555555 !important;
+    margin-bottom: 1.1rem !important;
+  }
+  .news-card h6 {
+    margin-bottom: 3.5rem !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .news_slide .col-md-3:last-child .news-card {
+    border: none;
+  }
+  .client-item {
+    height: auto;
+  }
+  .client .client-grid {
+    display: block;
+    gap: 5.0rem;
+    width: 100%;
+  }
+  
+  .client-grid {
+    margin-top: 3.0rem;
+    margin-bottom: 3.0rem;
+  }
+  
+  .client .client-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    filter: grayscale(1);
+  }
+  
+  .client {
+    height: max-content;
+    margin-bottom: 3.0rem;
+  }
+  .footer {
+    background-color: #1a3d54;
+    padding: 4.0rem 0;
+    font-size: 1.6rem;
+  }
+  
+  .footer input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #c2c2c2;
+    color: #c2c2c2;
+    width: 100%;
+  }
+  .footer input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .btn-subscribe {
+    background-color: #d29560;
+    color: #fff;
+    border: none;
+    margin-top: 1.0rem;
+  }
+  .footer-bottom {
+    margin-top: 4.0rem;
+    padding-top: 2.0rem;
+    font-size: 1.3rem;
+  }
+  .social-icons i {
+    font-size: 1.8rem;
+    margin-left: 1.0rem;
+    cursor: pointer;
+  }
+  .social-icons svg {
+    width: 4.7rem;
+  }
+  
+  a.btn {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  
+  footer p {
+    color: #fff;
+  }
+  footer h5 {
+    color: #dba45b !important;
+    margin-bottom: 5.0rem;
+    font-weight: 700;
+    font-family: 'FZ Poppins', sans-serif !important;
+  }
+  footer h6 {
+    font-family: 'FZ Poppins', sans-serif !important;
+    color: #dba45b !important;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  .col_final > p {
+    margin-bottom: 3.5rem;
+  }
+  
+  .col_middle h6,
+  .col_final h6 {
+    margin-bottom: 1.0rem;
+    margin-top: 2.0rem;
+  }
+  
+  .footer input {
+    margin-bottom: 2.0rem;
+  }
+  .footer button {
+    background: #dba45b;
+    color: #fff;
+    padding: .7rem 2.5rem;
+  }
+  
+  .footer {
+    position: relative;
+  }
+  .footer .overlay-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/bg_footer.png'); /* ảnh vòng tròn mờ nếu có */
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 27%;
+    z-index: -1;
+  }
+  
+  ul.list-unstyled {
+    display: grid;
+    gap: 1.0rem;
+  }
+  
+  .list-unstyled li a,
+  footer p {
+    font-weight: 300;
+  }
+  .social-icons i {
+    color: #fff;
+  }
+  a {
+    text-decoration: unset !important;
+  }
+  h2 {
+    text-transform: capitalize;
+    font-family: 'FZ Poppins', sans-serif !important;
+  }
+  .txt-poppin{
+    font-family: 'FZ Poppins', sans-serif !important;
+  }
+  
+  .real-estate-feature .content-box h4,
+  .hero-content h1,
+  .hero-stats .stat,
+  .news-card h6 {
+    font-family: 'FZ Poppins', sans-serif !important;
+  }
+  .hero-content h5,
+  .hero-stats .label {
+    font-family: 'Roboto', sans-serif !important;
+  }
+  
+  .back-to-top {
+    background-color: #c79156;
+    text-decoration: none;
+    cursor: pointer;
+    width: 4.0rem;
+    height: 4.0rem;
+    z-index: 999;
+    /*position: fixed;*/
+    /*right: 3.2rem;*/
+    position: relative;
+    right: -95%;
+    bottom: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 100%;
+  }
+  
+  .back-to-top:hover {
+    background-color: #ecb87f; /* lighten(deeppink, ~12%) */
+  }
+  
+  .back-to-top:active {
+    box-shadow: none;
+    background-color: #c79156; /* darken(deeppink, ~12%) */
+  }
+  
+  .back-to-top svg.icon__arrow-up {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .user {
+    text-decoration: none;
+    cursor: pointer;
+    width: 4.5rem;
+    height: 4.5rem;
+    z-index: 999;
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /*menu mobile*/
+  
+  /* Nút 3 gạch */
+  .mobile-menu-toggle {
+    position: absolute;
+    right: 2.0rem;
+    top: 2rem;
+    font-size: 2.4rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  /* Overlay tối nền */
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 999;
+  }
+  
+  /* Menu popup */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 32.0rem;
+    height: 100%;
+    background-color: #193e54;
+    transition: right 0.3s ease;
+    z-index: 10000;
+    padding: 3.0rem 2.0rem;
+  }
+  
+  .mobile-menu.active {
+    right: 0;
+  }
+  
+  .mobile-menu-overlay.active {
+    display: block;
+  }
+  
+  .mobile-menu-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2.0rem;
+  }
+  
+  .mobile-menu .close-menu {
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .mobile-nav {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .mobile-nav li {
+    margin: 1.5rem 0;
+  }
+  
+  .mobile-nav li a {
+    color: white;
+    font-size: 1.76rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .brand-message {
+    padding: 10.0rem 0 !important;
+  }
+  .project-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgb(0 123 191 / 31%), rgb(26 62 84));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: .8rem;
+  }
+  
+  .project-box:hover::before {
+    opacity: 1;
+  }
+  .real-estate-feature {
+    padding: 5.2rem 0 10.0rem;
+  }
+  .projects-section {
+    padding-top: 10.0rem !important;
+  }
+  .news-section {
+    padding: 8.0rem 0 !important;
+  }
+  .client .slick-slide {
+    height: auto;
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    width: 20.0rem;
+    height: 20.0rem;
+    cursor: pointer;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s linear;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card.show .flip-card-inner {
+    transform: inherit;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  .mobile-logo img {
+    max-width: 6.5rem;
+  }
+  .mobile-logo {
+    text-align: center;
+    padding: 1.0rem 0;
+  }
+  @media (min-width: 1600px) {
+    .row.hero-stats.text-center {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .main-header {
+      padding: 2.5rem 0;
+    }
+  
+    .row.hero-stats.text-center > div {
+      width: 100%;
+    }
+    .logo img {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    #mainHeader {
+      display: none;
+    }
+    .header_mobile {
+      height: 70px;
+      background: #193e54;
+    }
+  }
+   @media screen and (max-width:1440px) {
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 6rem;
+      height: .6rem;
+      background-color: #fff;
+      border-radius: 1rem;
+      margin: .9rem 0;
+      transition: 0.4s;
+    }
+      footer .col_middle {
+      margin-top: 4.8rem;
+      justify-content: start !important;
+    }
+    .mobile-logo img{
+      max-width: 9.5rem;
+    }
+   }
+   @media screen and (max-width:991px) {
+      footer .col_middle {
+      margin-top: 4.8rem;
+      justify-content: start !important;
+    }
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 3rem;
+      height: .3rem;
+      background-color: #fff;
+      border-radius: 1rem;
+      margin: .6rem 0;
+      transition: 0.4s;
+    }
+    .mobile-logo img{
+      max-width: 6.5rem;
+    }
+   }
+  @media (max-width: 767px) {
+    .total_hero_start {
+      position: unset;
+      margin-top: 0;
+    }
+    .total_hero_start {
+      padding: 3.0rem 2.2rem;
+      background: #1c3d53;
+    }
+    .hero-content {
+      top: 45%;
+    }
+    .hero-stats {
+      margin-top: 0 !important;
+    }
+  
+    .hero-stats .stat {
+      font-size: 3.0rem;
+    }
+    .about_content {
+      padding: 3rem 2.2rem !important;
+    }
+    .quote svg {
+      width: 4.5rem;
+    }
+    .real-estate-feature h2 {
+      margin-left: 3.0rem !important;
+    }
+    .real-estate-feature .content-box {
+      padding: 3.0rem;
+    }
+    .shareholder-section .left {
+      padding: 6.5rem 2.2rem;
+    }
+    .icon_round {
+      display: flex;
+      justify-content: center;
+    }
+    .hero-content h5 {
+      font-size: 2.5rem;
+    }
+    .real-estate .property-nav {
+      right: 40%;
+      bottom: unset;
+    }
+    section.real-estate {
+      margin-bottom: 3.5rem;
+    }
+    .projects-section p.text-muted {
+      text-align: justify;
+    }
+    .brand_round {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(15.0rem, 1fr));
+    }
+    .icon-box.text-center {
+      height: 17.1rem;
+      width: 17.3rem;
+    }
+    .circle-icon {
+      width: 16.0rem;
+      height: 16.0rem;
+    }
+    h2 {
+      font-size: 2.8rem !important;
+    }
+    .right_brand_message .g-4 {
+      --bs-gutter-y: 2.6rem;
+    }
+    .container {
+      padding-left: 2.2rem !important;
+      padding-right: 2.2rem !important;
+    }
+    .left_brand_message p {
+      width: 100%;
+    }
+    .news_slide .col-md-3:nth-child(even) .news-card {
+      border-right: none;
+      padding-right: 0;
+    }
+    .shareholder-section h2 {
+      margin-bottom: 2.0rem !important;
+    }
+    .news-card h6 {
+      line-height: 1.4;
+      margin-bottom: 2.0rem !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* Giới hạn 4 dòng */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .projects_detail .slick-slide {
+      margin: 0 .5rem;
+    }
+    .shareholder-section p {
+      margin-bottom: 2.0rem !important;
+    }
+    h2,
+    h2.mb-5,
+    h2.mb-4,
+    h2.mb-3 {
+      margin-bottom: 2.0rem !important;
+    }
+    .project-title {
+      font-weight: 700;
+    }
+    .projects-section p.text-muted {
+      font-size: 1.5rem;
+    }
+    .about-section p,
+    .left_brand_message p {
+      font-size: 1.5rem;
+    }
+  
+    .col_middle h6,
+    .col_final h6 {
+      margin-top: 0px;
+    }
+    .real-estate .real-estate-feature {
+      padding-top: 0 !important;
+      margin-bottom: 0px;
+    }
+    .img-banner {
+      min-height: 45.0rem;
+      object-fit: cover;
+      height: unset !important;
+    }
+    .footer .overlay-pattern {
+      background-size: 80%;
+    }
+    .footer-bottom p,
+    .footer-bottom .social-icons {
+      width: 100%;
+      text-align: center;
+    }
+    .hero-content h1 {
+      margin-top: 1rem;
+    }
+    .shareholder-section img,
+    .about-section img {
+      max-height: 30.0rem;
+    }
+    .back-to-top {
+      width: 4.0rem;
+      height: 4.0rem;
+      /*right: 1.5rem;*/
+  
+      right: -84%;
+    }
+    .back-to-top svg.icon__arrow-up {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    .news-card img {
+      max-height: 9.2rem;
+      width: 100%;
+    }
+    .news-card h6 {
+      text-align: left;
+    }
+    .user {
+      bottom: 8%;
+    }
+    .brand-message {
+      padding: 4.8rem 0 !important;
+    }
+    .news-section {
+      padding: 4.8rem 0 !important;
+    }
+    .client {
+      margin-bottom: 4.8rem;
+    }
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 1.8rem;
+      height: .1rem;
+      background-color: #fff;
+      border-radius: 1rem;
+      margin: .6rem 0;
+      transition: 0.4s;
+    }
+    .mobile-menu-toggle{
+      top: .5rem;
+    }
+    .mobile-logo{
+      padding-top: .5rem;
+    }
+    .mobile-logo img{
+      width: 3rem;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: inherit;
+    }
+    .flip-card.show .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+  
+  /*end menumobile*/
+  @media only screen and (max-width: 767px) {
+    br{
+      display: none !important
+    }
+  }
