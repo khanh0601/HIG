@@ -24,7 +24,7 @@
 .highway-container {
   width: 100%;
   position: relative;
-  background-image: url('../img/van-hoa-tap-doan/highway.jpg');
+  background-image: url('/wp-content/uploads/2025/07/highway-1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -278,31 +278,31 @@
 }
 
 .highway-block:nth-of-type(1) .flip-card-bg-image {
-  background-image: url('../img/van-hoa-tap-doan/block-1.jpg');
+  background-image: url('/wp-content/uploads/2025/07/block-1-1.jpg');
 }
 
 .highway-block:nth-of-type(2) .flip-card-bg-image {
-  background-image: url('../img/van-hoa-tap-doan/block-2.jpg');
+  background-image: url('/wp-content/uploads/2025/07/block-2-1.jpg');
 }
 
 .highway-block:nth-of-type(3) .flip-card-bg-image {
-  background-image: url('../img/van-hoa-tap-doan/block-3.jpg');
+  background-image: url('/wp-content/uploads/2025/07/block-3-1.jpg');
 }
 
 .highway-block:nth-of-type(4) .flip-card-bg-image {
-  background-image: url('../img/van-hoa-tap-doan/block-4.jpg');
+  background-image: url('/wp-content/uploads/2025/07/block-4-1.jpg');
 }
 
 .highway-block:nth-of-type(5) .flip-card-bg-image {
-  background-image: url('../img/van-hoa-tap-doan/block-5.jpg');
+  background-image: url('/wp-content/uploads/2025/07/block-5-1.jpg');
 }
 
 .highway-block:nth-of-type(6) .flip-card-bg-image {
-  background-image: url('../img/van-hoa-tap-doan/block-6.jpg');
+  background-image: url('/wp-content/uploads/2025/07/block-6-1.jpg');
 }
 
 .highway-block:nth-of-type(7) .flip-card-bg-image {
-  background-image: url('../img/van-hoa-tap-doan/block-7.jpg');
+  background-image: url('/wp-content/uploads/2025/07/block-7-1.jpg');
 }
 
 .highway-block:nth-of-type(1),
@@ -337,7 +337,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../img/van-hoa-tap-doan/bg-intro-section.jpg');
+  background-image: url('/wp-content/uploads/2025/07/bg-intro-section-1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -448,7 +448,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  top: -5;
+  top: 0;
   left: 0;
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -506,7 +506,7 @@
   right: 0;
   bottom: 0;
 
-  background-image: url('../img/van-hoa-tap-doan/bg-community-section.png');
+  background-image: url('/wp-content/uploads/2025/07/bg-community-section-1-1.png');
   background-size: cover;
   background-position: center;
   opacity: 0.9;
@@ -653,7 +653,7 @@
 }
 
 .community-section-box-circle-1 {
-  background: url('../img/van-hoa-tap-doan/community-spinner.png') no-repeat;
+  background: url('/wp-content/uploads/2025/07/community-spinner-1.png') no-repeat;
   background-size: cover;
   inset: 0;
   position: absolute;
@@ -685,19 +685,19 @@
 }
 
 .community-section-box.option-1 .community-section-box-circle-2 {
-  background: url('../img/van-hoa-tap-doan/circle-building.jpg') no-repeat;
+  background: url('/wp-content/uploads/2025/07/circle-building.jpg') no-repeat;
 }
 
 .community-section-box.option-2 .community-section-box-circle-2 {
-  background: url('../img/van-hoa-tap-doan/circle-agreement.jpg') no-repeat;
+  background: url('/wp-content/uploads/2025/07/circle-agreement.jpg') no-repeat;
 }
 
 .community-section-box.option-3 .community-section-box-circle-2 {
-  background: url('../img/van-hoa-tap-doan/circle-culture.jpg') no-repeat;
+  background: url('/wp-content/uploads/2025/07/circle-culture.jpg') no-repeat;
 }
 
 .community-section-box.option-4 .community-section-box-circle-2 {
-  background: url('../img/van-hoa-tap-doan/circle-users.jpg') no-repeat;
+  background: url('/wp-content/uploads/2025/07/circle-users.jpg') no-repeat;
 }
 
 .community-section-box-button.selected {
@@ -738,7 +738,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../img/van-hoa-tap-doan/bg-quote-section.png');
+  background-image: url('/wp-content/uploads/2025/07/bg-quote-section-1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -850,7 +850,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../img/van-hoa-tap-doan/bg-partner-marquee.jpg');
+  background-image: url('/wp-content/uploads/2025/07/bg-partner-marquee-1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

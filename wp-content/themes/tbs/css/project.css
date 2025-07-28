@@ -34,7 +34,7 @@
     font-size: 1.8rem;
 }
 .project__intro__right__wrap{
-    background: url("../img/Rectangle43.png") no-repeat 100% 100%;
+    background: url("/wp-content/uploads/2025/07/Rectangle43-1.png") no-repeat 100% 100%;
     width: 63.611%;
     height: 73.7rem;
     display: flex;
@@ -408,9 +408,9 @@ position: relative;
     flex: 1;
     width: 100%;
     cursor: pointer;
-    overflow: visible;
-    width: 32rem;
-    margin-inline: 0;
+    overflow: visible !important;
+    width: 32rem !important;
+    margin-inline: 0 !important;
     /* padding-left: 1rem; */
   }
   .project_hero_swiper_wrap {
@@ -429,7 +429,7 @@ position: relative;
     border: .2rem solid #FFF;
     overflow: hidden;
     margin-top: auto;
-    transition: box-shadow .4s ease;
+    transition: box-shadow .4s ease !important;
     &.swiper-slide-active {
       box-shadow: 0px 0px 1rem .5rem rgba(255, 255, 255, 0.25);
     .project_hero_swiper_slide_inner {
@@ -612,7 +612,7 @@ position: relative;
     display: none;
   }
   .project__cta__inner{
-    background: url(../img/bg_contact.png) no-repeat center;
+    background: url(/wp-content/uploads/2025/07/bg_contact-1-1.png) no-repeat center;
     background-size: 100% 100%;
     display: flex;
     min-height: 40rem;

@@ -24,8 +24,6 @@
 <meta name="format-detection" content="telephone=no">
 
 <title><?php  wp_title(''); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-
 <link href="<?= get_template_directory_uri(); ?>/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="<?= get_template_directory_uri(); ?>/plugin/font-awesome/css/all.min.css" rel="stylesheet" >
 
@@ -36,22 +34,10 @@
 
 
 <?php
-  $currentLang = get_locale();
-  $currentLang= explode("_",$currentLang)[0];
-
-	wp_enqueue_script('jquery', array(), SITE_VERSION, true);
-  wp_enqueue_style( 'swiper', get_template_directory_uri() . '/plugin/swiper/swiper-bundle.min.css');
-  wp_enqueue_style( 'global-css', get_template_directory_uri() . '/css/global.css', SITE_VERSION, true);
-  wp_enqueue_script('swiper', get_template_directory_uri() . '/plugin/swiper/swiper-bundle.min.js',array(),SITE_VERSION,true);
-  wp_enqueue_script('splitType', get_template_directory_uri() . '/js/split-type.js',array(),null,true);
+$currentLang = get_locale();
+$currentLang= explode("_",$currentLang)[0];
 
 	wp_head();
-
-global $hotline; 
-$hotline = tr_options_field('tr_theme_options.company_phone');
-if(is_array($hotline)){
-  $hotline=  $hotline[array_rand($hotline)];
-}
   $currentLang = get_locale();
   $currentLang= explode("_",$currentLang)[0];
   $languages=[
@@ -70,7 +56,6 @@ if(is_array($hotline)){
 
  <script type="text/javascript">
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
-    var homeurl = "<?php echo $homeUrl ?>";
     var thankurl = "<?php echo getPageTemplateUrl('thanks'); ?>";
     var template_directory = "<?php echo get_template_directory_uri(); ?>";
     var app = {
@@ -111,8 +96,8 @@ $menu_right = array_slice($menu_items, $half);
             <!-- Left Menu -->
             <ul class="nav">
                 <?php foreach ($menu_left as $item): ?>
-                    <li class="nav-item<?php if ($item->object_id == get_queried_object_id()) echo ' active'; ?>">
-                        <a class="nav-link" href="<?= esc_url($item->url) ?>"><?= esc_html($item->title) ?></a>
+                    <li class="nav-item">
+                        <a class="nav-link<?php if ($item->object_id == get_queried_object_id()) echo ' active'; ?>" href="<?= esc_url($item->url) ?>"><?= esc_html($item->title) ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -127,8 +112,8 @@ $menu_right = array_slice($menu_items, $half);
             <!-- Right Menu -->
             <ul class="nav">
                 <?php foreach ($menu_right as $item): ?>
-                    <li class="nav-item<?php if ($item->object_id == get_queried_object_id()) echo ' active'; ?>">
-                        <a class="nav-link" href="<?= esc_url($item->url) ?>"><?= esc_html($item->title) ?></a>
+                    <li class="nav-item">
+                        <a class="nav-link<?php if ($item->object_id == get_queried_object_id()) echo ' active'; ?>" href="<?= esc_url($item->url) ?>"><?= esc_html($item->title) ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>

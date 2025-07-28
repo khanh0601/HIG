@@ -376,7 +376,7 @@
 
 .project_detail_thumb_main {
     position: relative;
-    overflow: visible;
+    overflow: visible !important;
     width: 79rem;
 }
 

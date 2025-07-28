@@ -1,10 +1,6 @@
-<?php
-    nmc_get_template_part( 'partials/section-footer',['footer' => 1,"partner"=>1]);
-?>
+
 
 <?php wp_footer(); ?>
-<?= tr_options_field('tr_theme_options.script_footer');?>
-
 <div style="visibility: hidden; position: fixed;bottom: -500px;" >
     <svg >
         <defs>

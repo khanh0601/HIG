@@ -128,7 +128,21 @@
   color: #0066cc;
   font-weight: 600;
 }
-
+.hero-banner-wrap {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+.hero-banner-item {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
 [data-animate].slide-down {
   opacity: 0;
   transform: translateY(-30px);
@@ -2284,7 +2298,17 @@ html {
     align-self: center;
   }
 }
-
+.modal-ovelay {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.modal-dialog {
+  z-index: 2;
+  position: relative;
+}
 /* Chairman quote section background styling - UPDATED */
 .chairman-quote-section {
   position: relative;
@@ -2292,7 +2316,7 @@ html {
   padding: 80px 0;
   overflow: hidden;
   background-color: #1a3d54;
-  background-image: url('../img/gioi-thieu/location-image.png');
+  background-image: url('/wp-content/uploads/2025/07/location-image-1.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center right;
@@ -2460,6 +2484,14 @@ html {
     color: white;
     position: relative;
     z-index: 3;
+    padding: 0;
+    width: 100%;
+  }
+  .quote-section .quote-text {
+    line-height: 1.6 !important
+  }
+  .quote-section {
+    padding: 0;
   }
   .quote-content blockquote{
     line-height: 6px;
@@ -2646,7 +2678,10 @@ width: 128%;
   /* Nếu muốn màu mờ đi: */
   opacity: 0.5;
 }
-
+.manage-card.hover-profile {
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
 /* .manage-card.hover-profile {
   background: #e4e4e4;
   color: #222;
@@ -2655,13 +2690,16 @@ width: 128%;
 
 /* Hover vào card thứ 2 đổi nền và chữ giống card 1 */
 .manage-card.hover-profile:hover {
-  background: #2c5f7a;
+  background-color: #2c5f7a;
   color: #fff;
 } */
 
-.manage-card.hover-profile:hover .manage-name {
-  color: #c78f50; /* màu vàng nổi bật giống card 1 */
+.manage-card .manage-name {
+  color: #c78f50 !important;
 }
+ .manage-position, .manage-name {
+  transition: color 0.3s ease;
+ }
 .manage-card.hover-profile:hover .manage-position {
   color: white; /* màu vàng nổi bật giống card 1 */
 }

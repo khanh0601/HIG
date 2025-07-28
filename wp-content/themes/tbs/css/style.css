@@ -374,7 +374,6 @@ html {
   
   .brand-message {
     background-color: rgba(26, 61, 84, 1); /* nền xanh đậm */
-    background-image: url('../img/Mask group_brand.png'); /* ảnh lưới nếu cần */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -549,7 +548,7 @@ html {
   .shareholder-section .overlay-pattern {
     position: absolute;
     inset: 0;
-    background-image: url('../img/bg-quan-he-co-dong.png'); /* ảnh vòng tròn mờ nếu có */
+    background-image: url('/wp-content/uploads/2025/07/bg-quan-he-co-dong-1.png'); /* ảnh vòng tròn mờ nếu có */
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 75%;
@@ -1271,3 +1270,57 @@ html {
       display: none !important
     }
   }
+  .tabs-menu {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 90%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #c78f50e5;
+}
+
+.tabs-menu-wrapper {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.tabs-menu-item {
+  padding: 15px 30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: background 0.5s ease;
+  text-align: center;
+}
+
+.tabs-menu-item:hover {
+  background: linear-gradient(to top, #e6af6c00, #e6af6c 100%);
+}
+
+.tabs-menu-item.active {
+  background: #e6af6c;
+  box-shadow: 0px -2px 10px 0px #00000025;
+}
+.tabs-menu-item a {
+  color: #fff !important;
+}
+
+@media (max-width: 991px) {
+  .tabs-menu {
+    padding: 0;
+  }
+
+  .tabs-menu-item {
+    padding: 16px !important;
+  }
+
+  .tabs-menu-item-link {
+    font-size: 14px !important;
+  }
+}

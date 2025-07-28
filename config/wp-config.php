@@ -79,7 +79,7 @@ $table_prefix  = 'wp_tbs_';
 //define('WP_DEBUG', false);
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
-define( 'WP_DEBUG_DISPLAY', false );
+define( 'WP_DEBUG_DISPLAY', true );
 @ini_set( 'display_errors', 0 );
 
 set_time_limit(300);
@@ -94,7 +94,7 @@ define('DISALLOW_FILE_EDIT',true);
 define('GMAP_KEY', '');
 define( 'ALLOW_UNFILTERED_UPLOADS', true );
 define('SITE_VERSION', '1.0.1');
-define('SITE_NAME', 'TBS');
+define('SITE_NAME', 'HIG');
 
 define('WP_HOME','https://h-indochina.com');
 define('WP_SITEURL','https://h-indochina.com');

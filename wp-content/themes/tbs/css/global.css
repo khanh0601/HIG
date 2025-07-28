@@ -204,6 +204,9 @@ a:hover {
   font-size: 1.76rem;
   text-transform: uppercase;
   font-weight: 500;
+  &.active {
+    color: #c48c5e; /* màu cam cho TRANG CHỦ */
+  }
 }
 .mobile-logo img {
   max-width: 6.5rem;
@@ -410,7 +413,7 @@ footer h6 {
 .footer .overlay-pattern {
   position: absolute;
   inset: 0;
-  background-image: url('../img/bg_footer.png'); /* ảnh vòng tròn mờ nếu có */
+  background-image: url('/wp-content/uploads/2025/07/bg_footer.png'); /* ảnh vòng tròn mờ nếu có */
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: 27%;

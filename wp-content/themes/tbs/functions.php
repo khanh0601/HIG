@@ -13,7 +13,19 @@ function webp_upload_mimes($existing_mimes) {
   return $existing_mimes;
 }
 add_filter('mime_types', 'webp_upload_mimes');
-
+function theme_enqueue_scripts() {
+    wp_enqueue_script('jquery-cus', 'https://code.jquery.com/jquery-3.7.1.min.js', array(), SITE_VERSION, true);
+    wp_enqueue_script('swiper', get_template_directory_uri() . '/plugin/swiper/swiper-bundle.min.js', array(), SITE_VERSION, true);
+    wp_enqueue_script('splitType3', get_template_directory_uri() . '/js/split-type.js', array(), null, true);
+    wp_enqueue_script('slick_js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array(), null, true);
+        wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '2.3.1', true);
+    wp_enqueue_style('aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1');
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array(), null, true);
+    wp_enqueue_style('swiper', get_template_directory_uri() . '/plugin/swiper/swiper-bundle.min.css');
+    wp_enqueue_style('global-css', get_template_directory_uri() . '/css/global.css', array(), SITE_VERSION);
+    
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 //Media Support
 add_image_size( 'post-default', 900, 480, true ); // 480 pixels wide by 370 pixels tall, soft proportional crop mode
 //add_image_size( 'post-news', 410, 460, true );
@@ -364,3 +376,65 @@ function archive_posttype() {
 
 }
 add_action( 'template_redirect', 'archive_posttype' );
+function register_project_post_type() {
+    $labels = array(
+        'name'               => 'Dự án',
+        'singular_name'      => 'Dự án',
+        'menu_name'          => 'Dự án',
+        'name_admin_bar'     => 'Dự án',
+        'add_new'            => 'Thêm mới',
+        'add_new_item'       => 'Thêm Dự án mới',
+        'new_item'           => 'Dự án mới',
+        'edit_item'          => 'Chỉnh sửa Dự án',
+        'view_item'          => 'Xem Dự án',
+        'all_items'          => 'Tất cả Dự án',
+        'search_items'       => 'Tìm kiếm Dự án',
+        'not_found'          => 'Không tìm thấy',
+        'not_found_in_trash' => 'Không tìm thấy trong thùng rác',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array('slug' => 'du-an-chi-tiet'),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-building',
+        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'show_in_rest'       => true
+    );
+
+    register_post_type('project', $args);
+}
+add_action('init', 'register_project_post_type');
+function register_project_taxonomy() {
+    $labels = array(
+        'name'              => 'Danh mục Dự án',
+        'singular_name'     => 'Danh mục Dự án',
+        'search_items'      => 'Tìm kiếm danh mục',
+        'all_items'         => 'Tất cả danh mục',
+        'parent_item'       => 'Danh mục cha',
+        'parent_item_colon' => 'Danh mục cha:',
+        'edit_item'         => 'Chỉnh sửa danh mục',
+        'update_item'       => 'Cập nhật danh mục',
+        'add_new_item'      => 'Thêm danh mục mới',
+        'new_item_name'     => 'Tên danh mục mới',
+        'menu_name'         => 'Danh mục Dự án',
+    );
+
+    register_taxonomy('project_category', array('project'), array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'rewrite'           => array('slug' => 'danh-muc-du-an'),
+        'show_in_rest'      => true
+    ));
+}
+add_action('init', 'register_project_taxonomy');
