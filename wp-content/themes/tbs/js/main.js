@@ -15,7 +15,18 @@ $(document).ready(function () {
       });
     });
   });
-
+  let swiperHomeRealEstate = new Swiper('.real-estate-feature-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    effect: 'fade',
+    navigation: {
+      nextEl: '.next-btn',
+      prevEl: '.prev-btn',
+    },
+  });
+$('.nav-item-lang').click(function () {
+    $(this).toggleClass('active');
+});
   $('.projects_detail').slick({
     dots: false,
     arrows: false,

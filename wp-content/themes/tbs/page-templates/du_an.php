@@ -191,7 +191,7 @@ $project_show_items = tr_posts_field('project_show_items', $pageID);
   </div>
   <div class="project__realestate__title">
     <div class="project__realestate__title__bg image__full">
-      <img src="./assets/img/project-bg.png" alt="">
+      <img src="/wp-content/uploads/2025/07/project-bg-2.png" alt="">
     </div>
     <div class="project__realestate__subtitle subtitle__section">Dự Án</div>
     <div class="project__realestate__smalltitle__wrap">

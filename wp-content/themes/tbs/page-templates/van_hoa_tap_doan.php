@@ -18,9 +18,9 @@ get_header();
         alt="Banner"
         class="w-100 img-banner"
       />
-      <div class="hero-content container text-left text-white">
+      <div class="hero-content kl-container text-left text-white">
         <h5 class="fs-36">Văn Hoá Tập Đoàn</h5>
-        <h1 class="fs-64" id="bannerTitle">Văn Hoá<br />Doanh Nghiệp</h1>
+        <h1 class="fs-56" id="bannerTitle">Văn Hoá<br />Doanh Nghiệp</h1>
       </div>
       <nav class="tabs-menu">
         <ul class="tabs-menu-wrapper">
@@ -45,7 +45,7 @@ get_header();
     <div class="tab-content-1">
       <div class="highway-container">
         <div class="highway-overlay"></div>
-        <div class="container">
+        <div class="kl-container">
           <div class="highway-content" data-aos="fade-up">
             <div class="highway-header">
               <div class="highway-title-section">
@@ -63,10 +63,14 @@ get_header();
                   tôi theo đuổi triết lý tạo giá trị dài hạn, phát triển bền
                   vững và đồng hành cùng nhau tiến xa hơn mỗi ngày.
                 </div>
-
-                <div class="highway-vision">
+                <div class="highway-description">
                   Mỗi chữ cái là một lời cam kết, mỗi hành động là một phần của
                   hành trình kiến tạo nên những giá trị khác biệt.
+                </div>
+                <div class="highway-vision">
+                  Văn hóa HIGHWAY không chỉ được thể hiện bằng lời nói, mà được lan
+            tỏa qua từng hành vi, quyết định và dấu ấn mà HIG để lại trong từng
+            dự án, từng con người.
                 </div>
               </div>
             </div>
@@ -89,13 +93,6 @@ get_header();
       </div>
 
       <div class="highway-blocks">
-        <span class="highway-block-text" data-aos="fade-down">
-          <div class="container">
-            Văn hóa HIGHWAY không chỉ được thể hiện bằng lời nói, mà được lan
-            tỏa qua từng hành vi, quyết định và dấu ấn mà HIG để lại trong từng
-            dự án, từng con người.
-          </div>
-        </span>
         <div class="highway-block flip-card" data-aos="fade-up">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -249,7 +246,7 @@ get_header();
     <div class="tab-content-2">
       <div class="intro-section base-section">
         <div class="intro-section-bg"></div>
-        <div class="container" data-aos="fade-up">
+        <div class="kl-container" data-aos="fade-up">
           <div class="intro-section-title section-title">
             Chúng tôi xác định rõ
           </div>
@@ -265,7 +262,7 @@ get_header();
         </div>
       </div>
       <div class="development-section base-section">
-        <div class="container">
+        <div class="kl-container">
           <div class="development-section-title" data-aos="fade-up">
             PHÁT TRIỂN BỀN VỮNG
           </div>
@@ -362,7 +359,7 @@ get_header();
       </div>
       <div class="community-section">
         <div class="community-section-bg"></div>
-        <div class="container">
+        <div class="kl-container">
           <div class="community-section-head" data-aos="fade-up">
             <div class="community-section-title section-title">
               Trách nhiệm với <br>cộng đồng
@@ -431,7 +428,7 @@ get_header();
       </div>
       <div class="quote-section">
         <div class="quote-section-bg"></div>
-        <div class="container">
+        <div class="kl-container">
           <div class="quote-section-content">
             <img
               class="quote-section-content-image"
@@ -451,7 +448,7 @@ get_header();
     </div>
     <div class="tab-content-3">
       <div class="partner-intro-section base-section">
-        <div class="container" data-aos="fade-up">
+        <div class="kl-container" data-aos="fade-up">
           <div class="partner-intro-section-title section-title">
             Tại H Đông Dương,<br />chúng tôi xác định rằng
           </div>
@@ -475,7 +472,7 @@ get_header();
         </div>
       </div>
       <div class="partner-list-section">
-        <div class="container">
+        <div class="kl-container">
           <div
             class="partner-list-section-title section-title"
             data-aos="fade-up"
@@ -591,7 +588,7 @@ get_header();
         </div>
       </div>
       <div class="client-list-section">
-        <div class="container">
+        <div class="kl-container">
           <div
             class="client-list-section-title section-title"
             data-aos="fade-up"

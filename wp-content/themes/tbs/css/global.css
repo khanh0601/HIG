@@ -81,13 +81,69 @@ html {
   font-family: Roboto;
 }
 #mainHeader .nav {
-  gap: 5.6rem;
+  gap: 0;
+  flex: 1;
+  justify-content: space-between;
 }
 
 a:hover {
   color: #c48c5e !important;
 }
+#mainHeader.header-hidden .nav-item-lang-menu {
+  pointer-events: none;
+  opacity: 0;
+}
+#mainHeader.header-visible .nav-item-lang-menu {
+  background-color: #193e54;
+}
+.nav-item-lang {
+  position: relative;
+}
+.nav-item-lang.active {
+  .nav-item-lang-arrow {
+    transform: rotate(180deg);
+  }
+  .nav-item-lang-menu {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+.nav-item-lang-inner {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: .8rem;
+}
+.nav-item-lang-ic {
+  width: 3.2rem ;
+}
+.nav-item-lang-arrow {
+  transition: all 0.4s ease;
+  width: 1.6rem;
+}
 
+.nav-item-lang-menu {
+      width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: .4rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  gap: .6rem;
+  .nav-item-lang-menu-item {
+    transition: all 0.4s ease;
+    cursor: pointer;
+    color: white;
+    font-size: 1.44rem !important;
+    border-radius: .4rem;
+  }
+}
 .nav-item-about a {
   transition: color 0.3s ease;
 }
@@ -110,8 +166,8 @@ a:hover {
   font-weight: bold;
   color: #f5b042;
   text-align: center;
-  width: 8.9rem;
-  margin-inline: 5.6rem;
+  width: 7rem;
+  margin-inline: 4.8rem;
   img {
     width: 100%;
   }
@@ -213,28 +269,35 @@ a:hover {
 }
 .mobile-logo {
   text-align: center;
-  padding: 1.0rem 0;
+  padding: 0rem 0;
 }
 @media (min-width: 1600px) {
   .main-header {
-    padding: 2.5rem 0;
+    padding: 1.6rem 0;
   }
   .logo img {
     width: 100%;
   }
 }
 @media (max-width: 1200px) {
+  .mobile-menu-toggle {
+    position: static;
+  }
   #mainHeader {
     display: none;
   }
   .header_mobile {
     height: auto;
+    z-index: 10;
     position: relative;
+    display: flex;
+    align-items: center;
+    padding-inline: 4rem;
     background: #193e54;
+    padding-block: 1.6rem;
   }
   .mobile-menu-toggle {
     top: 50%  !important;
-    transform: translateY(-50%);
 }
 
 }
@@ -255,6 +318,12 @@ a:hover {
   }
  }
 @media (max-width: 767px) {
+  .header_mobile {
+    padding-inline: 2rem;
+  }
+  .nav-item-lang-ic {
+    width: 2.4rem;
+  }
   h2 {
     font-size: 2.8rem !important;
   }
@@ -313,7 +382,7 @@ a:hover {
   }
 
   .mobile-logo img{
-    width: 4rem;
+    width: 5rem;
   }
   .user {
     bottom: 8%;
@@ -322,6 +391,9 @@ a:hover {
 
 /*end menumobile*/
 @media only screen and (max-width: 767px) {
+  .total_hero_start {
+    position: unset;
+  }
   br{
     display: none !important
   }

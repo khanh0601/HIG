@@ -580,6 +580,8 @@ body.page-loading {
   z-index: 5;
   margin-top: 59px;
   margin-right: 8%;
+  border-radius: 2.8rem;
+  overflow: hidden;
 }
 .quote-line {
   background-color: white;
@@ -662,6 +664,7 @@ body.page-loading {
 @media (max-width: 768px) {
   .quote-image-section {
     margin-top: 30px;
+    border-radius: 1.2rem;
   }
 
   .quote-text-section {
@@ -692,7 +695,7 @@ body.page-loading {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 36px;
+  font-size: 3.6rem;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
@@ -739,13 +742,13 @@ body.page-loading {
   .tab-content-intro .text-content .description-content {
     width: 100%;
     padding: 0;
-    margin-bottom: 24px !important;
+    margin-bottom: 0 !important;
   }
 }
 
 @media (max-width: 480px) {
   .quote-section .quote-text {
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 
   .quote-section .author-title {
@@ -884,10 +887,9 @@ body.page-loading {
   z-index: 2;
 }
 
-.quote-section .container {
+.quote-section .kl-container {
   position: relative;
   z-index: 3;
-  width: 1000px;
 }
 
 /* Thêm background màu tối cho quote section để test */
@@ -1374,7 +1376,7 @@ html {
 
   .profile-text-section {
     order: 2;
-    padding: 0 20px;
+    padding: 0;
   }
 
   .profile-image-section {
@@ -1385,7 +1387,7 @@ html {
   /* Core Values Grid */
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 5rem;
   }
 
   .value-card {
@@ -1398,18 +1400,19 @@ html {
   }
 
   .card-description {
-    font-size: 14px;
+    font-size: 1.6rem;
     line-height: 1.5;
   }
 
   /* Vision & Mission Sections */
   .vision-section,
   .mission-section {
-    padding: 60px 0;
+    padding: 6rem 0;
     height: auto;
-    min-height: 500px;
   }
-
+.vision-content {
+  padding: 0;
+}
   .section-title {
     font-size: 32px;
     margin-bottom: 20px;
@@ -1417,12 +1420,12 @@ html {
 
   .vision-slogan,
   .mission-slogan {
-    font-size: 20px;
+    font-size: 1.6rem;
     line-height: 1.4;
-    margin-bottom: 20px;
+    margin-bottom: 2.4rem;
   }
   .mission-slogan {
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 .mission-content p{
   width: 40%;
@@ -1536,9 +1539,19 @@ html {
 
 /* Mobile Portrait (480px - 767px) */
 @media (max-width: 767px) {
+   .mission-header, .section-header {
+    margin-bottom: 0;
+   }
+    .section-title{
+      margin-bottom: 1.2rem !important;
+    }
+  .mission-slogan, .main-description, .mission-points, .section-subtitle {
+    font-size: 1.6rem !important;
+  }
+ 
   /* Hero Banner */
   .hero-banner .hero-content h1 {
-    font-size: 36px !important;
+    font-size: 2.8 !important;
     line-height: 1.2;
   }
 
@@ -1591,7 +1604,7 @@ html {
   .vision-section,
   .mission-section,
   .core-values-section {
-    padding: 60px 0;
+    padding: 6rem  0;
   }
 
   /* Description */
@@ -1633,9 +1646,9 @@ html {
   /* Vision & Mission Sections */
   .vision-section,
   .mission-section {
-    padding: 60px 0;
+    padding: 6rem 0;
     height: auto;
-    min-height: 500px;
+    min-height: 0;
   }
 
   .section-title {
@@ -1643,12 +1656,7 @@ html {
     margin-bottom: 20px;
   }
 
-  .vision-slogan,
-  .mission-slogan {
-    font-size: 20px;
-    line-height: 1.4;
-    margin-bottom: 20px;
-  }
+
 
   /* Quote Section */
   .quote-text {
@@ -1666,7 +1674,6 @@ html {
   .profile-description {
     font-size: 15px;
     line-height: 1.5;
-    text-align: left;
     margin-bottom: 20px;
   }
 
@@ -1692,10 +1699,14 @@ html {
   }
 
   .bio-system-card-title {
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 1.4;
   }
-
+.investment-content {
+  padding-block: 4rem;
+  margin-bottom: 0;
+  text-align: justify;
+}
   /* Investment Mobile */
   .investment-title {
     font-size: 22px;
@@ -1709,20 +1720,29 @@ html {
   }
 
   .investment-description {
-    font-size: 14px;
+    font-size: 1.6rem;
     line-height: 1.7;
-    margin-bottom: 25px;
+    margin-bottom: .6rem;
+  }
+  .investment-arrow-button {
+    width: 4rem;
+    height: 4rem;
+    svg {
+      width: 2.4rem;
+      height: auto;
+    }
   }
 
   .investment-companies-label {
-    font-size: 14px;
-    margin-bottom: 15px;
+    font-size: 1.6rem;
+    margin-bottom: 0;
   }
 
   .investment-company-item {
-    font-size: 12px;
-    padding: 10px 15px;
-    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+    padding: 0;
+    text-align: left;
   }
 
   /* Vice Director & Manage Cards */
@@ -1735,16 +1755,15 @@ html {
 
   .vice-director-card,
   .manage-card {
-    padding: 20px;
-    text-align: center;
+    padding: 2rem;
   }
 
   .vice-director-title,
   .manage-title {
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 1.3;
-    margin-bottom: 25px;
-    text-align: center;
+    margin-bottom: 4rem;
+    text-align: left;
   }
 }
 
@@ -1761,7 +1780,7 @@ html {
 
   .main-title,
   .main-title[data-animate] {
-    font-size: 24px !important;
+    font-size: 2.4rem !important;
     line-height: 1.4;
   }
 
@@ -1789,8 +1808,8 @@ html {
   }
 
   .investment-description {
-    font-size: 13px;
-    line-height: 1.8;
+    font-size: 1.8rem;
+    line-height: 1.6;
   }
 
   .value-card {
@@ -1801,9 +1820,7 @@ html {
     font-size: 16px;
   }
 
-  .card-description {
-    font-size: 14px;
-  }
+
 }
 
 /* Landscape Mobile & Small Tablet */
@@ -2108,8 +2125,11 @@ html {
   /* Values grid mobile stagger animation */
   .values-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 5rem;
   }
+  .profile-image-section {
+    grid-row: 1 / 2;
+}
 
   .value-card[data-animate='slide-up'] {
     animation: mobileValueCardSlide 0.6s ease-out forwards;
@@ -2188,7 +2208,7 @@ html {
   .manage-grid,
   .manage-grid-bottom {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 2.8rem;
   }
 
   .vice-director-card,
@@ -2229,13 +2249,13 @@ html {
     transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: opacity, transform;
 }
-.leadership-section .container{
+.leadership-section .kl-container{
   
-    background-image: url(../img/investment-bg.png);
+    background-image: url(/wp-content/uploads/2025/07/ElementPattern.svg);
     background-repeat: no-repeat;
           object-fit: contain;
     background-position: -29% 26%;
-    background-size: initial;}
+    background-size: 80rem;}
 .leadership-section .profile-text-section[data-animate='slide-right'].animated {
   opacity: 1;
   transform: translateX(0) !important;
@@ -2290,7 +2310,7 @@ html {
 
   .leadership-section .profile-text-section {
     order: 2;
-    padding: 0 20px;
+    padding: 0 ;
   }
 
   .leadership-section .profile-image-section {
@@ -2391,7 +2411,7 @@ html {
   }
 }
 
-.chairman-quote-section .container {
+.chairman-quote-section .kl-container {
   position: relative;
   z-index: 3;
 }
@@ -2603,6 +2623,10 @@ width: 128%;
 
 /* Thêm cho mobile nhỏ hơn */
 @media (max-width: 768px) {
+    .quote-section {
+    min-height: 0;
+    padding-block: 8rem;
+  }
   .chairman-quote-section {
     padding: 40px 0 !important;
     min-height: 400px !important;
@@ -2611,14 +2635,23 @@ width: 128%;
     gap: 25px !important;
   }
   .chairman-quote-section .quote-text {
-    font-size: 1.15rem !important;
-    line-height: 1.5 !important;
+    font-size: 2rem !important;
+    line-height: 1.4 !important;
     margin-bottom: 32px !important;
     text-align: center !important;
+    padding-inline: .6rem;
   }
-  .chairman-quote-section .author-name,
-  .chairman-quote-section .author-title {
-    font-size: 1rem !important;
+  .chairman-quote-section .quote-author-section {
+    margin-top: 0;
+  }
+  .chairman-quote-section .author-name {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+    .chairman-quote-section .author-title {
+    font-size: 1.6rem !important;
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -2638,13 +2671,26 @@ width: 128%;
   .chairman-quote-section .quote-line-pulse {
     width: 95% !important;
   }
+  .about-modal-inner {
+    height: 80vh;
+    overflow: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90%;
+    border-radius: 1rem;
+    left: 3%;
+    align-items: unset;
+    min-height: 0;
+            background: white;
+        margin: 0;
+  }
 }
 @media (max-width: 1024px) {
-  .hero-content.container.text-left.text-white p {
+  .hero-content.kl-container.text-left.text-white p {
     width: 100% !important;
   }
 }
-.hero-content.container.text-left.text-white p {
+.hero-content.kl-container.text-left.text-white p {
   width: 41%;
   color: #fff;
 }
@@ -2692,16 +2738,15 @@ width: 128%;
 .manage-card.hover-profile:hover {
   background-color: #2c5f7a;
   color: #fff;
-} */
-
-.manage-card .manage-name {
-  color: #c78f50 !important;
+} 
+.manage-card.hover-profile:hover .manage-name {
+  color: #c78f50 !important; 
 }
  .manage-position, .manage-name {
   transition: color 0.3s ease;
  }
 .manage-card.hover-profile:hover .manage-position {
-  color: white; /* màu vàng nổi bật giống card 1 */
+  color: white; 
 }
 .nav-menu-about .nav-item-about.active {
 box-shadow: 0 10px 15px rgba(0,0,0,0.1)

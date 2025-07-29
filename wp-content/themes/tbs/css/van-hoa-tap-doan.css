@@ -2,7 +2,7 @@
 
 /* General Styles */
 .section-title {
-  font-size: 45px;
+  font-size:4.5rem;
   font-weight: bold;
   font-family: 'FZ Poppins';
 }
@@ -82,14 +82,14 @@
 }
 
 .highway-description {
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .highway-vision {
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.6;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -99,7 +99,7 @@
 }
 
 .highway-footer-text {
-  font-size: 18px;
+  font-size: 1.8rem;
   color: white;
   line-height: 1.5;
   max-width: 400px;
@@ -149,7 +149,7 @@
   z-index: 2;
   width: 30% !important;
   max-width: 500px !important;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .highway-block {
@@ -185,12 +185,12 @@
 }
 
 .highway-block-title {
-  font-size: 36px;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 .highway-block-description {
-  font-size: 18px;
+  font-size: 1.8rem;
   margin-top: 80px;
   color: #fff;
 }
@@ -344,8 +344,8 @@
   opacity: 0.3;
 }
 
-.intro-section .container {
-  padding: 200px 0;
+.intro-section .kl-container {
+  padding-block: 200px ;
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -368,14 +368,14 @@
   background: #c78f50;
 }
 
-.development-section .container {
-  padding: 120px 0;
+.development-section .kl-container {
+  padding-block: 120px;
 }
 
 .development-section-title {
   color: #f3ce87;
   font-weight: bold;
-  font-size: 64px;
+  font-size: 4.5rem;
   font-family: 'FZ Poppins';
 }
 
@@ -438,7 +438,7 @@
 }
 
 .development-section-box-text-description {
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #000;
 }
 
@@ -512,8 +512,8 @@
   opacity: 0.9;
 }
 
-.community-section .container {
-  padding: 120px 0;
+.community-section .kl-container {
+  padding-block: 120px ;
   position: relative;
   color: #fff;
   z-index: 10;
@@ -582,7 +582,7 @@
 }
 
 .community-section-box-button-text {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #fff;
 }
@@ -745,8 +745,8 @@
   opacity: 0.3;
 }
 
-.quote-section .container {
-  padding: 120px 0;
+.quote-section .kl-container {
+  padding-block: 120px;
   position: relative;
   z-index: 10;
 }
@@ -760,7 +760,7 @@
 }
 
 .quote-section-content-text {
-  font-size: 36px;
+  font-size: 2.8rem;
   font-weight: bold;
   color: #1a3d54;
 }
@@ -783,8 +783,8 @@
   background: #1a3d54;
 }
 
-.partner-intro-section .container {
-  padding: 200px 0;
+.partner-intro-section .kl-container {
+  padding-block: 200px ;
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -801,7 +801,7 @@
 }
 
 .partner-intro-section-description {
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #fff;
 }
 
@@ -810,13 +810,14 @@
   background: #f3f7fb;
 }
 
-.partner-list-section .container {
-  padding: 120px 0;
+.partner-list-section .kl-container {
+  padding-block: 120px;
 }
 
 .partner-list-section-title {
   color: #c78f50;
   margin-bottom: 32px;
+  text-align: center;
 }
 
 .partner-list-section-items {
@@ -882,13 +883,14 @@
   background: #c78f50;
 }
 
-.client-list-section .container {
-  padding: 120px 0;
+.client-list-section .kl-container {
+  padding-block: 120px;
 }
 
 .client-list-section-title {
   color: #1a3d54;
   margin-bottom: 32px;
+  text-align: center;
 }
 
 /******************** END TAB-3 ***********************/
@@ -953,11 +955,11 @@
     margin-top: 24px;
   }
 
-  .intro-section .container {
-    padding: 120px 0;
+  .intro-section .kl-container {
+    padding-block: 120px ;
   }
 
-  .intro-section .container {
+  .intro-section .kl-container {
     flex-direction: column;
   }
 
@@ -1029,11 +1031,11 @@
     top: 0px;
   }
 
-  .partner-intro-section .container {
-    padding: 120px 0;
+  .partner-intro-section .kl-container {
+    padding-block: 120px ;
   }
 
-  .partner-intro-section .container {
+  .partner-intro-section .kl-container {
     flex-direction: column;
   }
 
@@ -1064,15 +1066,40 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  .community-section-description, .development-section-sub-description {
+    font-size: 1.6rem;
+   }
+   .section-title, .development-section-title {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+   }
+    .development-section-sub {
+      padding-block: 0 4rem ;
+      row-gap: 1rem;
+    }
+    .community-section .kl-container, .development-section .kl-container , .intro-section .kl-container, .quote-section .kl-container{
+      padding-block: 6rem;
+    }
+  .community-section-box-button {
+    display: flex;
+    flex-direction: row !important;
+    gap: 1.2rem;
+  }
+   .community-section-box-button-icon {
+    flex: none;
+    width: 6rem;
+    height: 6rem;
+    padding: 0.8rem;
+   }
+    .community-section-box-buttons, .community-section-box  {
+      row-gap: 2.4rem;
+    }
   .nav-item-about {
     padding: 16px !important;
   }
   .nav-link-about {
     font-size: 14px !important;
-  }
-  .section-title {
-    font-size: 28px;
   }
 
   .highway-content {
@@ -1080,15 +1107,15 @@
   }
 
   .highway-block-title {
-    font-size: 28px;
+    font-size: 2.8rem;
   }
 
   .highway-subtitle {
-    font-size: 20px;
+    font-size: 2rem;
   }
 
   .highway-watermark {
-    font-size: 60px;
+    font-size: 6rem;
     letter-spacing: 5px;
     padding-bottom: 250px;
   }

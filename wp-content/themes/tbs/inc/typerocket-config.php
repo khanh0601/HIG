@@ -237,9 +237,9 @@ add_action('edit_form_after_title', function ($post) use ($editorSettings) {
                 $form->column(
                     $form->text('title')->setLabel("Tiêu đề"),
                     $form->editor('content')->setLabel("Mô tả"),
-                    $form->text('team1')->setLabel("Thành viên 1"),
-                    $form->text('team2')->setLabel("Thành viên 2"),
-                    $form->text('team3')->setLabel("Thành viên 3"),
+                    $form->editor('team1')->setLabel("Thành viên 1"),
+                    $form->editor('team2')->setLabel("Thành viên 2"),
+                    $form->editor('team3')->setLabel("Thành viên 3"),
                 ),
                 $form->image('img')->setLabel("Hình ảnh"),
             )

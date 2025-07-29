@@ -74,7 +74,8 @@
 }
 
 .description-content p {
-  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.6;
   font-weight: 400;
   font-family: 'Roboto';
 }
@@ -202,7 +203,7 @@
   }
 
   .vision-description {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -552,7 +553,7 @@
 .core-values-section .card-title {
   color: white;
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 700;
 }
 .core-values-section .background-container:before {
@@ -977,7 +978,11 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  
+  .vice-director-info {
+    padding: 2rem 0 0 0 !important;
+  }
   .chairman-quote-section {
     padding: 60px 0;
   }
@@ -1046,6 +1051,7 @@
   padding: 80px 0;
 }
 .chairperson-of-the-board .profile-description {
+  text-align: justify;
   color: #555555;
 }
 .chairperson-of-the-board .achievement-item {
@@ -1054,7 +1060,7 @@
 /******************** Chairperson of the Board ***********************/
 /******************** LEADER ***********************/
 .leadership-section {
-  background: linear-gradient(135deg, #2c5f7a 0%, #1e4a61 100%);
+  background: #1A3D54;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -1187,6 +1193,7 @@
 }
 
 .profile-description {
+   text-align: justify;
   font-size: 18px;
   color: white;
   font-weight: 400;
@@ -1246,6 +1253,7 @@
 }
 
 @media (max-width: 768px) {
+  
   .leadership-section {
     padding: 60px 0;
   }
@@ -1320,13 +1328,19 @@
   grid-row-gap: 15px;
 }
 .vice-director-card {
-  background: white;
+  background-color: #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
+  &:hover {
+    background-color:#c78f50 ;
+    .vice-director-role {
+      color: white !important;
+    }
+  }
 }
 
 .vice-director-card:hover {
@@ -1363,12 +1377,11 @@
 
 .vice-director-container {
   background: #f3f7fb;
-  padding: 80px 0;
+  padding: 6rem 0;
 }
 .vice-director-info {
   padding: 20px;
   position: relative;
-  background: #e0e0e0;
 }
 
 .vice-director-name {
@@ -1385,6 +1398,7 @@
   line-height: 1.4;
   height: 75px;
   padding-right: 50px;
+  transition: all ease 0.3s;
 }
 
 .vice-director-arrow {
@@ -1423,7 +1437,7 @@
 /******************** MANAGER AND TEAM ***********************/
 .manage-container {
   background: #ffffff;
-  padding: 80px 0;
+  padding: 6rem 0;
 }
 
 .manage-title {
@@ -2001,6 +2015,28 @@
   height: 600px;
 }
 @media (max-width: 768px) {
+   .manage-position{
+    max-width: 26rem;
+   }
+  .vice-director-arrow, .manage-arrow {
+    position: absolute;
+    bottom: 0.6rem;
+    right: 0;
+    width: 4rem;
+    height: 4rem;
+   border-radius: .4rem;
+  }
+  .manage-arrow {
+    right: 2rem;
+    bottom: 2.6rem;
+  }
+  .vice-director-name{
+    font-size: 2rem;
+  }
+   .vice-director-role {
+    font-size: 1.8rem;
+    height: auto;
+   }
   .investment-container {
     flex-direction: column;
   }
@@ -2047,9 +2083,9 @@
   background-repeat: no-repeat;
   position: relative;
 }
-.bio-system-container .container {
+.bio-system-container .kl-container {
   margin: 0 auto;
-  padding: 120px 0;
+  padding-block: 12rem;
   position: relative;
   z-index: 2;
 }
@@ -2111,7 +2147,7 @@
   background: #f3f7fbe5;
   border: 1px solid #1e4966;
   margin: -1px 0 0 -1px;
-
+  cursor: pointer;
   padding: 40px 20px;
   min-height: 180px;
   position: relative;
@@ -2246,13 +2282,15 @@
   }
 }
 
-@media (max-width: 768px) {
-  .bio-system-container {
-    padding: 40px 30px;
+@media (max-width: 767px) {
+  .bio-system-container .kl-container {
+  padding-block: 6rem;
   }
 
+
   .bio-system-main-title {
-    font-size: 36px;
+    font-size: 2.8rem;
+    line-height: 1.2;
   }
 
   .bio-system-grid {
@@ -2265,21 +2303,43 @@
 
   .investment-number {
     font-size: 380px;
-    justify-content: center;
+    justify-content: right;
   }
+   .bio-system-header{
+    gap: 2rem;
+    margin-bottom: 4rem;
+   }
+   .investment-title-main, .investment-title-sub,
+   .bio-system-main-title {
+     font-size: 2.8rem;
+     line-height: 1.2;
+   }
+    .investment-companies-grid {
+      margin-bottom: 0;
+    }
+    .vision-header .section-title, .mission-section .section-title, .core-values-section .section-title {
+  font-size: 2.4rem !important;
+  line-height: 1.4 !important;
+}
+.vision-header {
+  margin-bottom: 1.6rem;
+}
+ .section-subtitle {
+  font-size: 1.8rem;
+ }
+    .core-values-section .card-title {
+    font-size: 1.8rem;
+   }
+    .card-content{
+      text-align: left;
+    }
 }
 
 @media (max-width: 480px) {
-  .bio-system-container {
-    padding: 30px 20px;
-  }
 
-  .bio-system-main-title {
-    font-size: 28px;
-    line-height: 32px;
-  }
 
   .bio-system-description {
+    margin-top: 0;
     font-size: 16px;
   }
 }

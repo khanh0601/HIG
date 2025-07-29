@@ -10,8 +10,8 @@
  * @subpackage tbs
  * @since tbs 1.0
  */
-wp_enqueue_style('about-style', get_template_directory_uri() . '/css/about-us.css', array(), '2.3.1');
-wp_enqueue_style('gioi-thieu-style', get_template_directory_uri() . '/css/gioi-thieu.css', array(), '2.3.1');
+wp_enqueue_style('about-style', get_template_directory_uri() . '/css/about-us.css', array(), '2.3.3');
+wp_enqueue_style('gioi-thieu-style', get_template_directory_uri() . '/css/gioi-thieu.css', array(), '2.3.4');
 get_header();
 $pageID = get_queried_object_id();
 $about_banner_img = wp_get_attachment_url(tr_posts_field('about_banner_img', $pageID));
@@ -77,7 +77,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
         src="<?= wp_kses_post($about_banner_img) ?>"
         alt="Banner"
         class="w-100 img-banner" />
-      <div class="hero-content container text-left text-white">
+      <div class="hero-content kl-container text-left text-white">
         <h5 class="fs-36"><?= wp_kses_post($about_banner_label) ?></h5>
         <h1 class="fs-56"><?= wp_kses_post($about_banner_title) ?></h1>
         <p><?= wp_kses_post($about_banner_description) ?></p>
@@ -88,7 +88,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
         src="<?= wp_kses_post($about_banner2_img) ?>"
         alt="Banner"
         class="w-100 img-banner" />
-      <div class="hero-content container text-left text-white">
+      <div class="hero-content kl-container text-left text-white">
         <h5 class="fs-36"><?= wp_kses_post($about_banner2_label) ?></h5>
         <h1 class="fs-56"><?= wp_kses_post($about_banner2_title) ?></h1>
         <p><?= wp_kses_post($about_banner2_description) ?></p>
@@ -99,7 +99,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
         src="<?= wp_kses_post($about_banner3_img) ?>"
         alt="Banner"
         class="w-100 img-banner" />
-      <div class="hero-content container text-left text-white">
+      <div class="hero-content kl-container text-left text-white">
         <h5 class="fs-36"><?= wp_kses_post($about_banner3_label) ?></h5>
         <h1 class="fs-56"><?= wp_kses_post($about_banner3_title) ?></h1>
         <p><?= wp_kses_post($about_banner3_description) ?></p>
@@ -125,7 +125,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
   <section
     class="hero-section"
     style="background-image: url('/wp-content/uploads/2025/07/overlay1-1-1.jpg')">
-    <div class="container">
+    <div class="kl-container">
       <div class="content-wrapper">
         <div class="text-content">
           <header class="section-header" data-animate="slide-down">
@@ -168,7 +168,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
     <div class="vision-bg" data-animate="rotate-right-to-left">
       <img class="vision-bg-img" src="/wp-content/uploads/2025/07/element-pattern.png" alt="">
     </div>
-    <div class="container">
+    <div class="kl-container">
       <div class="vision-content">
         <header class="vision-header" data-animate="slide-down">
           <h2 class="section-title"><?= wp_kses_post($about_vision_title) ?></h2>
@@ -195,7 +195,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
       <div class="circle-background"></div>
     </div>
 
-    <div class="container">
+    <div class="kl-container">
       <div class="mission-content-wrap">
         <div class="mission-header" data-animate="slide-down">
           <h2 class="section-title"><?= wp_kses_post($about_mission_title) ?></h2>
@@ -221,7 +221,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
       <div class="background-texture"></div>
     </div>
 
-    <div class="container">
+    <div class="kl-container">
       <div class="core-values-content">
         <div class="values-grid">
           <div class="value-card">
@@ -268,7 +268,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
       <div class="background-image"></div>
     </div>
 
-    <div class="container">
+    <div class="kl-container">
       <div class="quote-content">
         <blockquote class="quote-text" data-animate="scale-up">
           <?= wp_kses_post($about_talk_title) ?>
@@ -288,7 +288,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
       <div class="background-dots"></div>
     </div>
 
-    <div class="container">
+    <div class="kl-container">
       <div class="quote-content">
         <div class="quote-text-section">
           <div class="opening-quote">
@@ -331,7 +331,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
       <div class="background-watermark">LEADERSHIP</div>
     </div>
 
-    <div class="container">
+    <div class="kl-container">
       <div class="leader-profile">
         <div class="profile-content text-right">
           <div class="profile-image-section" data-animate="slide-right">
@@ -353,7 +353,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
       <div class="background-watermark">LEADERSHIP</div>
     </div>
 
-    <div class="container">
+    <div class="kl-container">
       <!-- Ông Kishimoto Takaharu -->
       <div class="leader-profile">
         <div class="profile-content text-left">
@@ -386,7 +386,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
     </div>
   </section>
   <div class="vice-director-container">
-    <div class="container">
+    <div class="kl-container">
       <h4 class="vice-director-title"><?= wp_kses_post($about_team4_title) ?></h4>
 
       <div class="vice-director-grid">
@@ -424,7 +424,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
   </div>
   <div
     class="manage-container">
-    <div class="container">
+    <div class="kl-container">
       <h4 class="vice-director-title">
         <?= wp_kses_post($about_team5_title) ?>
       </h4>
@@ -464,7 +464,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
 <div class="tab-content-ecoSystem">
   <div class="bio-system-container">
     <div class="bio-system-overlay"></div>
-    <div class="container">
+    <div class="kl-container">
       <div class="bio-system-header">
         <div class="bio-system-title-section">
           <h1 class="bio-system-main-title">
@@ -473,22 +473,22 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
         </div>
 
         <div class="bio-system-description-section">
-          <p class="bio-system-description">
+          <div class="bio-system-description">
             <?= wp_kses_post($about_hdongduong_description) ?>
-          </p>
+          </div>
         </div>
       </div>
 
       <div class="bio-system-grid">
         <?php
-
+        $counter = 0;
         if (!empty($about_hdongduong_items)) :
           foreach ($about_hdongduong_items as $index => $item) :
             $title = esc_html($item['title']);
             $img_url = isset($item['img']) ? wp_get_attachment_image_url($item['img'], 'full') : '';
-            $target = 'container-' . $index;
+            $target = 'investment-' . $counter.'-container'; 
         ?>
-            <div class="bio-system-card bio-system-<?php echo $index; ?>">
+            <div class="bio-system-card bio-system-<?php echo $counter; ?>" data-target="<?php echo esc_attr($target); ?>">
               <div class="bio-system-card-bg"
                 style="background-image: url('<?php echo esc_url($img_url); ?>');">
               </div>
@@ -497,7 +497,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
                 <?php echo nl2br($title); ?>
               </div>
 
-              <div class="bio-system-card-arrow" data-target="<?php echo esc_attr($target); ?>">
+              <div class="bio-system-card-arrow" >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M7 17L17 7" stroke="currentColor" stroke-width="2"
@@ -508,6 +508,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
               </div>
             </div>
         <?php
+            $counter++;
           endforeach;
         endif;
         ?>
@@ -521,9 +522,9 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
     foreach ($about_field_items as $index => $item) :
       $title   = esc_html($item['title']);
       $content = wp_kses_post($item['content']);
-      $team1   = esc_html($item['team1']);
-      $team2   = esc_html($item['team2']);
-      $team3   = esc_html($item['team3']);
+      $team1   = $item['team1'];
+      $team2   = $item['team2'];
+      $team3   = $item['team3'];
       $img_url = isset($item['img']) ? wp_get_attachment_image_url($item['img'], 'full') : '';
   ?>
       <div class="investment-container  investment-<?php echo $counter ?>-container">
@@ -590,7 +591,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
   aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-ovelay"></div>
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-dialog modal-dialog-centered about-modal-inner modal-lg">
     <div class="modal-content">
       <!-- Header -->
       <div
@@ -840,6 +841,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
   });
   $('.about-modal-team-item').on('click', function (e) {
     e.preventDefault();
+    $(this).addClass('active');
     const title = $(this).attr('data-title');
     const imgUrl = $(this).attr('data-img-url');
     const name = $(this).attr('data-name');
@@ -855,6 +857,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
   $('#modalProfile .btn-close').on('click', function () {
     $('#modalProfile').fadeOut(300);
     console.log('Profile modal closed');
+    $('.about-modal-team-item').removeClass('active');
   });
   // Test function - có thể gọi từ console
   window.testTabSwitch = function (tabName) {
@@ -940,7 +943,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
 
 
 // Scroll to section when clicking bio-system-card-arrow
-$('.bio-system-card-arrow').on('click', function (e) {
+$('.bio-system-card').on('click', function (e) {
   e.preventDefault();
   console.log('Bio-system card arrow clicked');
 

@@ -71,12 +71,14 @@ $logo_items = tr_posts_field('logo_items', $pageID);
 ?>
 
 <section class="hero-banner position-relative">
-  <img
-    src="<?php echo $home_banner_img ?>"
-    alt="Banner"
-    class="w-100 img-banner" />
-  <div class="hero-content container text-center text-white">
-    <h1><?= wp_kses_post($home_banner_title) ?></h1>
+  <div class="position-relative">
+    <img
+      src="<?php echo $home_banner_img ?>"
+      alt="Banner"
+      class="w-100 img-banner" />
+    <div class="hero-content kl-container text-center text-white">
+      <h1><?= wp_kses_post($home_banner_title) ?></h1>
+    </div>
   </div>
   <div class="total_hero_start">
     <div class="row hero-stats text-center">
@@ -131,7 +133,7 @@ $logo_items = tr_posts_field('logo_items', $pageID);
 
 <!--brand-->
 <section class="brand-message text-white" style="background-image: url(<?= wp_kses_post($home_message_img) ?>)">
-  <div class="container">
+  <div class="kl-container">
     <div class="row align-items-center">
       <!-- Cột trái -->
       <div class="col-lg-6 mb-4 mb-lg-0 left_brand_message">
@@ -157,7 +159,7 @@ $logo_items = tr_posts_field('logo_items', $pageID);
       </div>
 
       <!-- Cột phải: 4 icon -->
-      <div class="col-lg-5 right_brand_message">
+      <div class="col-lg-6 right_brand_message">
         <div class="row g-4 brand_round">
           <!-- Icon 1 -->
           <div class="col-sm-6 icon_round">
@@ -202,7 +204,6 @@ $logo_items = tr_posts_field('logo_items', $pageID);
                     </clipPath>
                   </defs>
                 </svg>
-
                 <p><?= wp_kses_post($home_message_itme1) ?></p>
               </div>
             </div>
@@ -337,7 +338,7 @@ $logo_items = tr_posts_field('logo_items', $pageID);
 </section>
 
 <section class="projects-section py-5">
-  <div class="container text-center">
+  <div class="kl-container text-center">
     <!-- Tiêu đề -->
     <h2 class="mb-3" style="color: #dba45b"><?= wp_kses_post($home_ecosystem_title) ?></h2>
     <p class="text-muted mb-4 px-lg-5">
@@ -372,53 +373,57 @@ $logo_items = tr_posts_field('logo_items', $pageID);
 <section class="real-estate">
   <div class="real-estate-slide position-relative">
     <div class="real-estate-feature">
-      <div class="container position-relative">
+      <div class="kl-container position-relative">
         <!-- Tiêu đề -->
         <h2
           class="mb-5"
           style="color: #dba45b; font-weight: 400; margin-left: 50px">
           <?= wp_kses_post($home_real_estate_title) ?>
         </h2>
-        <?php
-        if (is_array($home_real_estate_items)) :
-          foreach ($home_real_estate_items as $item) :
-        ?>
-            <div class="row mb-5">
-              <!-- Cột ảnh bên trái -->
-              <div class="col-lg-7 real_anh">
-                <div class="image-wrapper position-relative">
-                  <img
-                    src="<?= esc_url(wp_get_attachment_url($item['img']) ?? 'assets/img/default.png') ?>"
-                    alt="<?= esc_attr($item['title'] ?? '') ?>"
-                    class="img-fluid w-100" />
-                </div>
-              </div>
+        <div class="swiper real-estate-feature-swiper">
+          <div class="swiper-wrapper">
+            <?php
+            if (is_array($home_real_estate_items)) :
+              foreach ($home_real_estate_items as $item) :
+            ?>
+                <div class="row mb-5 swiper-slide">
+                  <!-- Cột ảnh bên trái -->
+                  <div class="col-lg-7 real_anh">
+                    <div class="image-wrapper position-relative real-estate-feature-img">
+                      <img
+                        src="<?= esc_url(wp_get_attachment_url($item['img']) ?? 'assets/img/default.png') ?>"
+                        alt="<?= esc_attr($item['title'] ?? '') ?>"
+                        class="img-fluid w-100" />
+                    </div>
+                  </div>
 
-              <!-- Box nội dung nổi lên ảnh -->
-              <div class="col-lg-5">
-                <div class="content-box">
-                  <h4 class="" style="color: #dba45b">
-                    <?= esc_html($item['title'] ?? 'Tên dự án') ?>
-                  </h4>
-                  <div class="text-muted small mt-3 mb-2">
-                    <?= wp_kses_post($item['desc'] ?? '') ?>
+                  <!-- Box nội dung nổi lên ảnh -->
+                  <div class="col-lg-5">
+                    <div class="content-box">
+                      <h4 class="" style="color: #dba45b">
+                        <?= esc_html($item['title'] ?? 'Tên dự án') ?>
+                      </h4>
+                      <div class="text-muted small mt-3 mb-2">
+                        <?= wp_kses_post($item['desc'] ?? '') ?>
+                      </div>
+                    </div>
+                    
                   </div>
                 </div>
-                <div class="property-nav">
-                  <button class="prev-btn">
-                    <i class="fa-solid fa-arrow-left"></i>
-                  </button>
-                  <button class="next-btn">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-        <?php
-          endforeach;
-        endif;
-        ?>
-
+            <?php
+              endforeach;
+            endif;
+            ?>
+          </div>
+        </div>
+<div class="property-nav">
+                      <button class="prev-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                      </button>
+                      <button class="next-btn">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </button>
+                    </div>
       </div>
     </div>
   </div>
@@ -455,7 +460,7 @@ $logo_items = tr_posts_field('logo_items', $pageID);
 </section>
 
 <section class="news-section">
-  <div class="container text-center">
+  <div class="kl-container text-center">
     <!-- Tiêu đề -->
     <h2 class="mb-4" style="color: #dba45b; font-weight: 300">
       Tin tức & Sự kiện
@@ -522,7 +527,7 @@ $logo_items = tr_posts_field('logo_items', $pageID);
 </section>
 
 <section class="client">
-  <div class="container">
+  <div class="kl-container">
     <div class="client-grid">
       <?php
       $logo_items = tr_posts_field('logo_items', $pageID); // Hoặc tr_field nếu trong loop

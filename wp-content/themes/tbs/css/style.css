@@ -350,7 +350,7 @@ html {
   }
   @media (min-width: 767px) {
     h2 {
-      font-size: 45px !important;
+      font-size: 4.5rem !important;
       font-weight: 300 !important;
       color: #c79156 !important;
     }
@@ -390,26 +390,33 @@ html {
   
   .circle-icon {
     flex-direction: column;
-    gap: 2.0rem;
+    justify-content: center;
+    gap: 2rem;
     padding: 1.7rem;
-    width: 20.0rem;
-    height: 20.0rem;
+    width: 100%;
+    height: 100%;
     border: 1px solid #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
     margin: 0 auto;
     color: #dba45b;
     font-size: 3.2rem;
   }
   .circle-icon svg {
-    width: 7.5rem;
+    width: 6.8rem;
+    height: auto;
+    flex: none;
+  }
+  .col-sm-6.icon_round {
+    padding-inline: 2rem;
+    margin-top: 4rem;
   }
   .icon-box.text-center {
-    height: 21.2rem;
-    width: 21.4rem;
-    padding: .5rem;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    width: 100%;
+    padding: 1.5rem;
     border: .1rem solid #dba45b;
     border-radius: 50%;
   }
@@ -417,8 +424,8 @@ html {
   .icon-box p {
     font-weight: 300;
     margin-top: 1.0rem;
-    font-size: 1.52rem;
-    color: #dba45b;
+    font-size: 1.8rem;
+    color: white;
   }
   
   .real-estate .property-nav {
@@ -429,6 +436,11 @@ html {
     justify-content: center;
     margin-top: 2rem;
     bottom: 10%;
+    z-index: 100;
+  }
+  .real-estate-feature-img img{
+    aspect-ratio: 3/2;
+    object-fit: cover;
   }
   
   .real-estate .property-nav button {
@@ -537,6 +549,13 @@ html {
     margin-bottom: 2rem !important;
   }
   @media (max-width: 991px) {
+    .about_content {
+      padding-inline: 4rem !important ;
+    }
+    .right_brand_message {
+      margin-top: 8rem;
+      max-width: 60rem;
+    }
     .content-box {
       position: static;
       transform: none;
@@ -675,7 +694,6 @@ html {
     height: auto;
     display: block;
     max-width: 100%;
-    filter: grayscale(1);
   }
   
   .client {
@@ -793,7 +811,12 @@ html {
   .txt-poppin{
     font-family: 'FZ Poppins', sans-serif !important;
   }
-  
+  .real-estate-feature {
+    overflow: hidden;
+    .swiper.real-estate-feature-swiper {
+      overflow: visible !important;
+    }
+  }
   .real-estate-feature .content-box h4,
   .hero-content h1,
   .hero-stats .stat,
@@ -1065,6 +1088,9 @@ html {
     }
    }
   @media (max-width: 767px) {
+    .projects-section {
+      padding-block: 6rem !important;
+    }
     .total_hero_start {
       position: unset;
       margin-top: 0;
@@ -1074,7 +1100,7 @@ html {
       background: #1c3d53;
     }
     .hero-content {
-      top: 45%;
+      top: 50%;
     }
     .hero-stats {
       margin-top: 0 !important;
@@ -1090,7 +1116,11 @@ html {
       width: 4.5rem;
     }
     .real-estate-feature h2 {
-      margin-left: 3.0rem !important;
+      margin-left: 0rem !important;
+      margin-bottom: 4rem;
+    }
+    .real-estate-feature {
+      padding-block:  6rem 9rem !important;
     }
     .real-estate-feature .content-box {
       padding: 3.0rem;
@@ -1107,11 +1137,12 @@ html {
     }
     .real-estate .property-nav {
       right: 40%;
-      bottom: unset;
+      bottom: -2.4rem;
     }
-    section.real-estate {
-      margin-bottom: 3.5rem;
+    .projects_detail  {
+      margin-top: 3.2rem;
     }
+
     .projects-section p.text-muted {
       text-align: justify;
     }
@@ -1123,9 +1154,21 @@ html {
       height: 17.1rem;
       width: 17.3rem;
     }
-    .circle-icon {
-      width: 16.0rem;
-      height: 16.0rem;
+  .circle-icon {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .icon-box.text-center{
+    padding: 1rem;
+  }
+  .right_brand_message{
+    margin-top: 2rem;
+  }
+    .circle-icon svg {
+      width: 4.0rem;
+    }
+    .icon-box p {
+      font-size: 1.6rem;
     }
     h2 {
       font-size: 2.8rem !important;
@@ -1229,7 +1272,7 @@ html {
       bottom: 8%;
     }
     .brand-message {
-      padding: 4.8rem 0 !important;
+      padding: 6rem 0 !important;
     }
     .news-section {
       padding: 4.8rem 0 !important;
@@ -1276,7 +1319,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  width: 90%;
+  width: calc(100% - 24rem);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: #c78f50e5;
@@ -1314,6 +1357,7 @@ html {
 @media (max-width: 991px) {
   .tabs-menu {
     padding: 0;
+    width: calc(100% - 8rem);
   }
 
   .tabs-menu-item {
@@ -1324,3 +1368,12 @@ html {
     font-size: 14px !important;
   }
 }
+ @media  only screen and (max-width: 767px) {
+    .tabs-menu {
+      width: calc(100% - 4rem);
+    }
+  .tabs-menu-item {
+    padding-inline: 1rem !important;
+  }
+  
+ }
