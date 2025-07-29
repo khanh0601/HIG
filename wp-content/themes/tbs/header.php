@@ -32,7 +32,11 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/style.css?v=<?= SITE_VERSION ?>">
       <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
+<style>
+    .df_hide_onload {
+  opacity: 0;
+}
+</style>
 
       <?php
         $currentLang = get_locale();

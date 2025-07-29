@@ -20,6 +20,7 @@ function theme_enqueue_scripts() {
     wp_enqueue_script('slick_js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array(), null, true);
         wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '2.3.1', true);
     wp_enqueue_style('aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1');
+  wp_enqueue_script('core-animation-js', get_template_directory_uri() . '/js/core-animation/index.js', array(), SITE_VERSION, true);
     wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array(), null, true);
     wp_enqueue_style('swiper', get_template_directory_uri() . '/plugin/swiper/swiper-bundle.min.css');
     wp_enqueue_style('global-css', get_template_directory_uri() . '/css/global.css', array(), SITE_VERSION);
@@ -375,7 +376,7 @@ function archive_posttype() {
 
 
 }
-add_action( 'template_redirect', 'archive_posttype' );
+add_action('init', 'register_project_post_type');
 function register_project_post_type() {
     $labels = array(
         'name'               => 'Dự án',
@@ -412,7 +413,8 @@ function register_project_post_type() {
 
     register_post_type('project', $args);
 }
-add_action('init', 'register_project_post_type');
+
+add_action('init', 'register_project_taxonomy');
 function register_project_taxonomy() {
     $labels = array(
         'name'              => 'Danh mục Dự án',
@@ -437,4 +439,71 @@ function register_project_taxonomy() {
         'show_in_rest'      => true
     ));
 }
-add_action('init', 'register_project_taxonomy');
+
+// 2. Add featured checkbox meta box
+add_action('add_meta_boxes', function() {
+    add_meta_box('project_featured_metabox', 'Nổi bật', function($post) {
+        $value = get_post_meta($post->ID, '_is_featured_project', true);
+        echo '<label><input type="checkbox" name="is_featured_project" value="1"' . checked($value, 1, false) . '> Dánh dấu là dự án nổi bật</label>';
+    }, 'project', 'side', 'high');
+});
+
+add_action('save_post', function($post_id) {
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!current_user_can('edit_post', $post_id)) return;
+    if (isset($_POST['is_featured_project'])) {
+        update_post_meta($post_id, '_is_featured_project', 1);
+    } else {
+        delete_post_meta($post_id, '_is_featured_project');
+    }
+});
+
+// 3. Add column in list table
+add_filter('manage_project_posts_columns', function($columns) {
+    $columns['is_featured'] = 'Nổi bật';
+    return $columns;
+});
+
+add_action('manage_project_posts_custom_column', function($column, $post_id) {
+    if ($column === 'is_featured') {
+        $is_featured = get_post_meta($post_id, '_is_featured_project', true);
+        echo '<div data-is_featured="' . ($is_featured ? '1' : '0') . '">' . ($is_featured ? '✅' : '—') . '</div>';
+    }
+}, 10, 2);
+
+add_filter('manage_edit-project_sortable_columns', function($columns) {
+    $columns['is_featured'] = 'is_featured';
+    return $columns;
+});
+
+add_action('pre_get_posts', function($query) {
+    if (!is_admin()) return;
+    if ($query->get('orderby') === 'is_featured') {
+        $query->set('meta_key', '_is_featured_project');
+        $query->set('orderby', 'meta_value_num');
+    }
+});
+
+// 4. Quick edit support
+add_action('quick_edit_custom_box', function($column_name, $post_type) {
+    if ($column_name !== 'is_featured' || $post_type !== 'project') return;
+    echo '<fieldset class="inline-edit-col-right"><div class="inline-edit-col"><label><input type="checkbox" name="is_featured_project" value="1"> Dánh dấu là nổi bật</label></div></fieldset>';
+}, 10, 2);
+
+add_action('admin_footer', function() {
+    global $post_type;
+    if ($post_type !== 'project') return;
+    ?>
+    <script>
+    jQuery(function($){
+        var $wp_inline_edit = inlineEditPost.edit;
+        inlineEditPost.edit = function(id) {
+            $wp_inline_edit.apply(this, arguments);
+            var post_id = typeof(id) === 'object' ? parseInt(this.getId(id)) : id;
+            var is_featured = $('#post-' + post_id).find('td.column-is_featured div').data('is_featured');
+            $('input[name="is_featured_project"]', '.inline-edit-row').prop('checked', is_featured == 1);
+        };
+    });
+    </script>
+    <?php
+});

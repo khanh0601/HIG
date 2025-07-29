@@ -10,7 +10,7 @@
  * @subpackage tbs
  * @since tbs 1.0
  */
-wp_enqueue_style('van-hoa-style', get_template_directory_uri() . '/css/project.css', array(), '2.3.1');
+wp_enqueue_style('van-hoa-style', get_template_directory_uri() . '/css/project.css', array(), '2.3.2');
 get_header();
 $pageID = get_queried_object_id();
 $banner_items = tr_posts_field('banner_items', $pageID);
@@ -23,7 +23,7 @@ $project_show_items = tr_posts_field('project_show_items', $pageID);
 ?>
 <section class="project_hero">
   <div class="project_hero_overlay"></div>
-  <div class="project_hero_bg">
+  <div class="project_hero_bg df_hide_onload">
     <?php
     $count = 0;
     if (!empty($banner_items)) :
@@ -107,7 +107,7 @@ $project_show_items = tr_posts_field('project_show_items', $pageID);
               $title = trim($item['title']) ?? '';
               $data_title = sanitize_title($title);
           ?>
-              <div class="swiper-slide project_hero_swiper_slide" data-title="<?php echo esc_attr($data_title); ?>">
+              <div class="swiper-slide project_hero_swiper_slide df_hide_onload" data-title="<?php echo esc_attr($data_title); ?>">
                 <div class="project_hero_swiper_slide_inner image__fullfill">
                   <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($title); ?>">
                 </div>
@@ -118,7 +118,7 @@ $project_show_items = tr_posts_field('project_show_items', $pageID);
           ?>
 
         </div>
-        <div class="project_hero_control_progress"></div>
+        <div class="project_hero_control_progress df_hide_onload"></div>
       </div>
     </div>
   </div>

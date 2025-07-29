@@ -383,16 +383,30 @@ $logo_items = tr_posts_field('logo_items', $pageID);
         <div class="swiper real-estate-feature-swiper">
           <div class="swiper-wrapper">
             <?php
-            if (is_array($home_real_estate_items)) :
-              foreach ($home_real_estate_items as $item) :
+            $args = array(
+              'post_type'      => 'project',
+              'posts_per_page' => 6, // Số lượng hiển thị, bạn có thể điều chỉnh
+              'meta_key'       => '_is_featured_project',
+              'meta_value'     => 1,
+              'orderby'        => 'date',
+              'order'          => 'DESC'
+            );
+
+            $featured_projects = new WP_Query($args);
+
+            if ($featured_projects->have_posts()) :
+              while ($featured_projects->have_posts()) : $featured_projects->the_post();
+                $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: get_template_directory_uri() . '/assets/img/default.png';
+                 $position    = tr_posts_field('project_position');
+                $scale       = tr_posts_field('project_quy_mo');
             ?>
                 <div class="row mb-5 swiper-slide">
                   <!-- Cột ảnh bên trái -->
                   <div class="col-lg-7 real_anh">
                     <div class="image-wrapper position-relative real-estate-feature-img">
                       <img
-                        src="<?= esc_url(wp_get_attachment_url($item['img']) ?? 'assets/img/default.png') ?>"
-                        alt="<?= esc_attr($item['title'] ?? '') ?>"
+                        src="<?= esc_url($thumb) ?>"
+                        alt="<?= esc_attr(get_the_title()) ?>"
                         class="img-fluid w-100" />
                     </div>
                   </div>
@@ -401,29 +415,36 @@ $logo_items = tr_posts_field('logo_items', $pageID);
                   <div class="col-lg-5">
                     <div class="content-box">
                       <h4 class="" style="color: #dba45b">
-                        <?= esc_html($item['title'] ?? 'Tên dự án') ?>
+                        <?= esc_html(get_the_title()) ?>
                       </h4>
                       <div class="text-muted small mt-3 mb-2">
-                        <?= wp_kses_post($item['desc'] ?? '') ?>
+                        <?= esc_html(the_content()) ?>
+                      </div>
+                      <div class="text-muted small mt-3 mb-2">
+                        <strong>Vị trí:</strong> <?= esc_html($position ?: '—') ?><br>
+                      </div>
+                       <div class="text-muted small mt-3 mb-2">
+                        <strong>Quy mô:</strong> <?= esc_html($scale ?: '—') ?>
                       </div>
                     </div>
-                    
                   </div>
                 </div>
             <?php
-              endforeach;
+              endwhile;
+              wp_reset_postdata();
             endif;
             ?>
+
           </div>
         </div>
-<div class="property-nav">
-                      <button class="prev-btn">
-                        <i class="fa-solid fa-arrow-left"></i>
-                      </button>
-                      <button class="next-btn">
-                        <i class="fa-solid fa-arrow-right"></i>
-                      </button>
-                    </div>
+        <div class="property-nav">
+          <button class="prev-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="next-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>

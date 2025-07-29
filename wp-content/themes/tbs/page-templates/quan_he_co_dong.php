@@ -10,7 +10,7 @@
  * @subpackage tbs
  * @since tbs 1.0
  */
-wp_enqueue_style('quan-he-co-dong-style', get_template_directory_uri() . '/css/relationship.css', array(), '2.3.1');
+wp_enqueue_style('quan-he-co-dong-style', get_template_directory_uri() . '/css/relationship.css', array(), '2.3.2');
 
 get_header();
 $banner_img = wp_get_attachment_image_url(tr_posts_field('banner_img'), 'full');
@@ -25,15 +25,15 @@ $timeline = tr_posts_field('timeline_years');
 ?>
 <section class="relationship__hero">
   <div class="relationship__hero__inner">
-    <div class="relationship__hero__img image__full">
+    <div class="relationship__hero__img image__full df_hide_onload">
       <img src="<?php echo esc_url($banner_img); ?>" alt="" />
     </div>
     <div class="relationship__hero__overlay"></div>
     <div class="relationship__hero__content">
-      <div class="relationship__hero__content__subtitle subtitle__banner">
+      <div class="relationship__hero__content__subtitle subtitle__banner df_hide_onload">
         <?php echo esc_html($banner_label); ?>
       </div>
-      <div class="relationship__hero__content__smalltitle title__banner">
+      <div class="relationship__hero__content__smalltitle title__banner df_hide_onload">
         <?php echo esc_html($banner_title); ?>
       </div>
     </div>
@@ -128,5 +128,31 @@ endif;
 
 </section>
 <?php
+
+wp_enqueue_script(
+  'gsap',
+  'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js',
+  array(),
+  '3.12.5',
+  true
+);
+
+// GSAP ScrollTrigger
+wp_enqueue_script(
+  'gsap-scrolltrigger',
+  'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js',
+  array('gsap'),
+  '3.12.5',
+  true
+);
+
+// SplitType
+wp_enqueue_script(
+  'split-type',
+  'https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js',
+  array(),
+  '0.3.4',
+  true
+);
 wp_enqueue_script('quan-he-co-dong-js', get_template_directory_uri() . '/js/relationship.js', array(), SITE_VERSION, true);
 get_footer(); ?>

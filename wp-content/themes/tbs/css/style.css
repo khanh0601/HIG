@@ -688,7 +688,9 @@ html {
     margin-top: 3.0rem;
     margin-bottom: 3.0rem;
   }
-  
+  .real-estate .property-nav button.swiper-button-disabled {
+    opacity: .4;
+  }
   .client .client-grid img {
     width: 100%;
     height: auto;

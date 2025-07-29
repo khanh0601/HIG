@@ -71,15 +71,6 @@ add_action('edit_form_after_title', function ($post) use ($editorSettings) {
         ]);
         echo endBox();
 
-        echo beginBox("Bất động sản", true);
-        echo $form->text('home_real_estate_title')->setLabel("Tiêu đề");
-        echo $form->repeater('home_real_estate_items1')->setLabel("Card Item")->setFields([
-            $form->image('img')->setLabel("Hình ảnh"),
-            $form->text('title')->setLabel("Tiêu đề"),
-            $form->editor('desc')->setLabel("Mô tả"),
-        ]);
-        echo endBox();
-
         echo beginBox("Quan hệ cổ đông", true);
         echo $form->image('home_relation_img')->setLabel("Hình ảnh");
         echo $form->text('home_relation_title')->setLabel("Tiêu đề");

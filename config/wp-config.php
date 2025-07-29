@@ -93,7 +93,7 @@ define('DISALLOW_FILE_EDIT',true);
 
 define('GMAP_KEY', '');
 define( 'ALLOW_UNFILTERED_UPLOADS', true );
-define('SITE_VERSION', '1.0.1');
+define('SITE_VERSION', '1.0.2');
 define('SITE_NAME', 'HIG');
 
 define('WP_HOME','https://h-indochina.com');

@@ -259,7 +259,7 @@ position: relative;
 .project__realestate__detail__item{
     width: 45.56%;
     margin-bottom: 10rem;
-    img {
+    img.active {
         transition: .6s ease all;
     }
     &:hover img {
