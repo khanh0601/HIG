@@ -79,19 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
         <textarea name="contact_message" placeholder="Nội dung"></textarea>
         <button class="contact__content__submit" type="submit" name="contact_submit">GỬI NGAY</button>
       </form>
-
-      <?php if (!empty($success_message)) : ?>
-        <div class="form__success"><?php echo esc_html($success_message); ?></div>
-      <?php endif; ?>
-
-      <?php if (!empty($errors)) : ?>
-        <div class="form__errors">
-          <?php foreach ($errors as $error) : ?>
-            <div class="form__error"><?php echo esc_html($error); ?></div>
-          <?php endforeach; ?>
-        </div>
-      <?php endif; ?>
-
     </div>
     <div class="contact__content__right">
       <div class="contact__content__right__inner">

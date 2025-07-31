@@ -545,11 +545,22 @@
         font-size: 1.6rem;
         color: black;
         width: max-content;
-        padding: .4rem 1.2rem;
+        padding: .6rem 1.6rem;
         margin-top: 1rem;
-
+        text-transform: uppercase;
     }
-
+.recruit__benefit__left__des__txt {
+    & ul {
+        & li {
+            padding-left: 2.4rem;
+            &::after {
+                width: 1.6rem;
+                height: 1.6rem;
+                top: .3rem;
+            }
+        }
+    }
+}
     .recruit__opportunity__table__row__detail {
         margin-left: 0;
     }

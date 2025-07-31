@@ -9,8 +9,6 @@ if (have_posts()) :
         $post_id = get_the_ID();
 
         // Các field đơn lẻ
-        $thumb_des = tr_posts_field('thumb_des', $post_id);
-        $author_title = tr_posts_field('author_title', $post_id);
 
 
         // Repeater hình ảnh
@@ -35,12 +33,28 @@ if (have_posts()) :
                 $first_cat_slug = $categories ? $categories[0]->slug : '';
                 ?>
                 <div class="new__hero__menu">
-                    <div class="new__hero__menu__item <?php echo ($first_cat_slug === 'truyen-thong') ? 'active' : ''; ?>">
-                        <div class="new__hero__menu__item__txt">TRUYỀN THÔNG</div>
-                    </div>
-                    <div class="new__hero__menu__item <?php echo ($first_cat_slug === 'su-kien') ? 'active' : ''; ?>">
-                        <div class="new__hero__menu__item__txt">SỰ KIỆN</div>
-                    </div>
+                    <?php
+                    $tintuc_url = '/tin-tuc';
+                    ?>
+                    <?php if ($first_cat_slug === 'truyen-thong') : ?>
+                        <div class="new__hero__menu__item active">
+                            <div class="new__hero__menu__item__txt">TRUYỀN THÔNG</div>
+                        </div>
+                    <?php else : ?>
+                        <a href="<?php echo esc_url(add_query_arg('tab', 'truyen-thong', $tintuc_url)); ?>" class="new__hero__menu__item">
+                            <div class="new__hero__menu__item__txt">TRUYỀN THÔNG</div>
+                        </a>
+                    <?php endif; ?>
+
+                    <?php if ($first_cat_slug === 'su-kien') : ?>
+                        <div class="new__hero__menu__item active">
+                            <div class="new__hero__menu__item__txt">SỰ KIỆN</div>
+                        </div>
+                    <?php else : ?>
+                        <a href="<?php echo esc_url(add_query_arg('tab', 'su-kien', $tintuc_url)); ?>" class="new__hero__menu__item">
+                            <div class="new__hero__menu__item__txt">SỰ KIỆN</div>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
@@ -49,18 +63,6 @@ if (have_posts()) :
                 <div class="new__detail__time"><?php echo get_the_date('d-m-Y'); ?></div>
 
                 <div class="new__detail__title"><?php the_title(); ?></div>
-
-                <div class="new__detail__img image__full">
-                    <?php
-                    $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'full') ?: get_template_directory_uri() . '/assets/img/default-thumb.jpg';
-                    ?>
-                    <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                </div>
-
-                <div class="new__detail__des__img">
-                    <?= wp_kses_post($thumb_des) ?>
-                </div>
-
                 <div class="new__detail__content">
                     <div class="new__detail__content__des">
                         <?php
@@ -69,11 +71,7 @@ if (have_posts()) :
                     </div>
                 </div>
 
-                <div class="new__detail__authorize">
-                    <?php
-                    echo 'Theo ' . esc_html($author_title);
-                    ?>
-                </div>
+
             </div>
 
         </section>

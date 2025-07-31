@@ -13,6 +13,30 @@ $(document).ready(function () {
 
   // 2. Khi trang load: kiểm tra URL để chọn tab tương ứng
   const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+
+  let tabToActivate = null;
+
+  if (tabParam === 'truyen-thong') {
+    tabToActivate = 'news';
+  } else if (tabParam === 'su-kien') {
+    tabToActivate = 'event';
+  } else if (urlParams.has('news_page')) {
+    tabToActivate = 'news';
+  } else if (urlParams.has('event_page')) {
+    tabToActivate = 'event';
+  }
+
+  if (tabToActivate) {
+    document.querySelectorAll('.new__hero__menu__item').forEach(item => item.classList.remove('active'));
+    const activeMenuItem = document.querySelector(`.new__hero__menu__item[data-tab="${tabToActivate}"]`);
+    if (activeMenuItem) activeMenuItem.classList.add('active');
+
+    document.querySelectorAll('.new_content_item').forEach(item => item.classList.remove('active'));
+    const activeContentItem = document.querySelector(`.new_content_item[data-tab="${tabToActivate}"]`);
+    if (activeContentItem) activeContentItem.classList.add('active');
+  }
+
   if (urlParams.has('event_page')) {
     // Active tab SỰ KIỆN
     $('.new__hero__menu__item').removeClass('active');

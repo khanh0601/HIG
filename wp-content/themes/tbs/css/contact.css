@@ -132,7 +132,7 @@
  @media only screen and (max-width: 767px) {
     .contact__hero__txt {
         top: 12rem;
-        left: 4rem;
+        left: 2rem;
     }
     .contact__content__inner {
         flex-direction: column;

@@ -10,8 +10,8 @@
  * @subpackage tbs
  * @since tbs 1.0
  */
-wp_enqueue_style('about-style', get_template_directory_uri() . '/css/about-us.css', array(), '2.3.3');
-wp_enqueue_style('gioi-thieu-style', get_template_directory_uri() . '/css/gioi-thieu.css', array(), '2.3.4');
+wp_enqueue_style('about-style', get_template_directory_uri() . '/css/about-us.css', array(), '2.3.4');
+wp_enqueue_style('gioi-thieu-style', get_template_directory_uri() . '/css/gioi-thieu.css', array(), '2.3.5');
 get_header();
 $pageID = get_queried_object_id();
 $about_banner_img = wp_get_attachment_url(tr_posts_field('about_banner_img', $pageID));
@@ -481,7 +481,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
 
       <div class="bio-system-grid">
         <?php
-        $counter = 0;
+        $counter = 1;
         if (!empty($about_hdongduong_items)) :
           foreach ($about_hdongduong_items as $index => $item) :
             $title = esc_html($item['title']);
@@ -634,7 +634,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
 <?php get_footer(); ?>
 <script>
   $(document).ready(function () {
-  console.log('=== TAB SYSTEM WITH SCROLL ANIMATIONS ===');
+
 
   AOS.init({
     duration: 1000,
@@ -839,6 +839,17 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
         return false;
       });
   });
+    // check url có parama tab không
+  const urlParams = new URLSearchParams(window.location.search);
+  const tab = urlParams.get('tab');
+
+  if (tab) {
+    const target = $('[data-banner="' + tab + '"]');
+
+    if (target.length) {
+      target.trigger('click');
+    }
+  }
   $('.about-modal-team-item').on('click', function (e) {
     e.preventDefault();
     $(this).addClass('active');
@@ -851,10 +862,12 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
     $('#modalProfile .modal-intro').html(title);
     $('#modalProfile .modal-avatar').attr('src', imgUrl);
     $('#modalProfile').fadeIn(300);
-
+   $('html').addClass('overflow-cus-hide')
     console.log('Profile modal opened for:', title);
   })
   $('#modalProfile .btn-close').on('click', function () {
+   $('html').removeClass('overflow-cus-hide')
+
     $('#modalProfile').fadeOut(300);
     console.log('Profile modal closed');
     $('.about-modal-team-item').removeClass('active');

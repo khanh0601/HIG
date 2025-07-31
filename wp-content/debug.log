@@ -9826,3 +9826,12 @@ Stack trace:
 #2 D:\HIG\index.php(17): require('D:\\HIG\\wp-blog-...')
 #3 {main}
   thrown in D:\HIG\wp-content\themes\tbs\page-templates\homepage.php on line 400
+[30-Jul-2025 23:11:55 UTC] PHP Notice:  Undefined variable: tintuc_url in D:\HIG\wp-content\themes\tbs\single.php on line 51
+[30-Jul-2025 23:34:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\HIG\wp-content\themes\tbs\page-templates\quan_he_co_dong.php on line 86
+[30-Jul-2025 23:34:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\HIG\wp-content\themes\tbs\page-templates\quan_he_co_dong.php on line 86
+[30-Jul-2025 23:34:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\HIG\wp-content\themes\tbs\page-templates\quan_he_co_dong.php on line 86
+[30-Jul-2025 23:34:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\HIG\wp-content\themes\tbs\page-templates\quan_he_co_dong.php on line 86
+[30-Jul-2025 23:34:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\HIG\wp-content\themes\tbs\page-templates\quan_he_co_dong.php on line 86
+[30-Jul-2025 23:34:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\HIG\wp-content\themes\tbs\page-templates\quan_he_co_dong.php on line 86
+[30-Jul-2025 23:34:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\HIG\wp-content\themes\tbs\page-templates\quan_he_co_dong.php on line 86
+[30-Jul-2025 23:34:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\HIG\wp-content\themes\tbs\page-templates\quan_he_co_dong.php on line 86

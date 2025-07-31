@@ -683,8 +683,9 @@ body.page-loading {
 .quote-section .quote-content {
   text-align: center;
   color: white;
-  width: 1000px;
+  width: 100rem;
   position: relative;
+  margin: auto;
   z-index: 3;
   padding: 40px 20px;
 }
@@ -696,7 +697,7 @@ body.page-loading {
   font-weight: 700;
   font-style: normal;
   font-size: 3.6rem;
-  line-height: 100%;
+  line-height: 1.4em  !important;
   letter-spacing: 0%;
   text-align: center;
   color: #1a3d54;
@@ -1627,11 +1628,17 @@ html {
   }
 
   .icon-circle {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 15px;
+        width: 6rem;
+        height: 6rem;
+        margin: 0 auto 15px;
   }
-
+.value-card:before {
+    top: -.2rem;
+    left: 3rem;
+    width: 8rem;
+    height: 4rem;
+    border-radius: 4rem 4rem 0 0
+}
   .card-title {
     font-size: 18px;
     margin-bottom: 12px;
@@ -2517,9 +2524,9 @@ html {
     line-height: 6px;
   }
   .card-icon{
-position: absolute;
-    top: -30px;
-    left: 30px;  }
+        position: absolute;
+        top: -3rem;
+        left: 4rem; }
   .mission-content-wrap .mission-content .mission-body{
     width: 100%;
     line-height: 1.8;
@@ -2678,7 +2685,7 @@ width: 128%;
     transform: translateY(-50%);
     width: 90%;
     border-radius: 1rem;
-    left: 3%;
+    left: 5%;
     align-items: unset;
     min-height: 0;
             background: white;

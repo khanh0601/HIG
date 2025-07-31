@@ -507,3 +507,113 @@ add_action('admin_footer', function() {
     </script>
     <?php
 });
+// 1. Meta box trong trang chỉnh sửa post
+function add_custom_fields_for_post() {
+    add_meta_box(
+        'custom_display_fields',
+        'Tùy chọn hiển thị',
+        'render_custom_fields_for_post',
+        'post',
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'add_custom_fields_for_post');
+
+function render_custom_fields_for_post($post) {
+    $show_on_homepage = get_post_meta($post->ID, '_show_on_homepage', true);
+    $is_featured = get_post_meta($post->ID, '_is_featured', true);
+    ?>
+    <p><label><input type="checkbox" name="show_on_homepage" <?php checked($show_on_homepage, 'yes'); ?> /> Hiển thị Homepage</label></p>
+    <p><label><input type="checkbox" name="is_featured" <?php checked($is_featured, 'yes'); ?> /> Nổi bật</label></p>
+    <?php
+}
+// 2. Thêm cột vào bảng danh sách post
+function add_custom_columns_to_post($columns) {
+    $columns['show_on_homepage'] = 'Hiển thị Homepage';
+    $columns['is_featured'] = 'Nổi bật';
+    return $columns;
+}
+add_filter('manage_post_posts_columns', 'add_custom_columns_to_post');
+
+function render_custom_columns_for_post($column, $post_id) {
+    if ($column === 'show_on_homepage') {
+        echo get_post_meta($post_id, '_show_on_homepage', true) === 'yes' ? '✅' : '–';
+    }
+    if ($column === 'is_featured') {
+        echo get_post_meta($post_id, '_is_featured', true) === 'yes' ? '⭐' : '–';
+    }
+}
+add_action('manage_post_posts_custom_column', 'render_custom_columns_for_post', 10, 2);
+// 3. Thêm class để truyền dữ liệu qua JavaScript
+add_filter('post_class', function($classes, $class, $post_id) {
+    $show = get_post_meta($post_id, '_show_on_homepage', true) === 'yes' ? 'yes' : 'no';
+    $feat = get_post_meta($post_id, '_is_featured', true) === 'yes' ? 'yes' : 'no';
+    $classes[] = "data-show-homepage-$show";
+    $classes[] = "data-is-featured-$feat";
+    return $classes;
+}, 10, 3);
+// 4. Hiển thị checkbox trong Quick Edit (tách cột riêng)
+function add_quick_edit_custom_fields($column_name, $post_type) {
+    if ($post_type !== 'post') return;
+
+    if ($column_name === 'show_on_homepage') {
+        ?>
+        <fieldset class="inline-edit-col-left">
+            <div class="inline-edit-col">
+                <label class="alignleft">
+                    <input type="checkbox" name="custom_quickedit_show_on_homepage" class="custom_quickedit_show_on_homepage" />
+                    <span class="checkbox-title">Hiển thị Homepage</span>
+                </label>
+            </div>
+        </fieldset>
+        <?php
+    }
+
+    if ($column_name === 'is_featured') {
+        ?>
+        <fieldset class="inline-edit-col-left">
+            <div class="inline-edit-col">
+                <label class="alignleft">
+                    <input type="checkbox" name="custom_quickedit_is_featured" class="custom_quickedit_is_featured" />
+                    <span class="checkbox-title">Nổi bật</span>
+                </label>
+            </div>
+        </fieldset>
+        <?php
+    }
+}
+add_action('quick_edit_custom_box', 'add_quick_edit_custom_fields', 10, 2);
+// 5. Lưu dữ liệu từ meta box và quick edit
+function save_all_custom_fields($post_id) {
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+    $show = (isset($_POST['show_on_homepage']) || isset($_POST['custom_quickedit_show_on_homepage'])) ? 'yes' : '';
+    $feat = (isset($_POST['is_featured']) || isset($_POST['custom_quickedit_is_featured'])) ? 'yes' : '';
+
+    update_post_meta($post_id, '_show_on_homepage', $show);
+    update_post_meta($post_id, '_is_featured', $feat);
+}
+add_action('save_post', 'save_all_custom_fields');
+// 6. JavaScript để gán lại checkbox khi mở Quick Edit
+add_action('admin_footer-edit.php', function () {
+    global $current_screen;
+    if ($current_screen->post_type !== 'post') return;
+    ?>
+    <script>
+        jQuery(function($){
+            $(document).on('click', '.editinline', function () {
+                const postId = $(this).closest('tr').attr('id').replace('post-', '');
+                const row = $('#post-' + postId);
+
+                const showHomepage = row.hasClass('data-show-homepage-yes');
+                const isFeatured = row.hasClass('data-is-featured-yes');
+
+                const editRow = $('#edit-' + postId);
+                editRow.find('input.custom_quickedit_show_on_homepage').prop('checked', showHomepage);
+                editRow.find('input.custom_quickedit_is_featured').prop('checked', isFeatured);
+            });
+        });
+    </script>
+    <?php
+});

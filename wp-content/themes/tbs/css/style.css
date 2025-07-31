@@ -292,7 +292,7 @@ html {
       --bs-body-font-size : 1.6rem  !important;
     }
     .btn {
-      --bs-btn-font-size: 1.6rem !important
+      --bs-btn-font-size: 1.8rem !important
   
     }
   .hero-stats {
@@ -487,6 +487,7 @@ html {
     bottom: 0;
     left: 0;
     right: 0;
+    min-height: 14rem;
     padding: 7.0rem 1.5rem 1.5rem 1.5rem;
     color: #fff;
     font-weight: 500;
@@ -495,7 +496,12 @@ html {
     z-index: 2;
     /*backdrop-filter: blur(2px);*/
   }
-  
+  .row.projects_detail {
+    margin-top: 0;
+  }
+  .project-section-btn {
+    margin-bottom: 7rem;
+  }
   .projects_detail .slick-slide {
     margin: 0 1.0rem;
   }
@@ -518,7 +524,7 @@ html {
     font-size: 1.6rem !important;
   }
   .btn {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
   .content-box {
     background-color: #f5f5f5;
@@ -1022,6 +1028,13 @@ html {
     text-align: center;
     padding: 1.0rem 0;
   }
+  .overflow-cus-hide {
+    height: 100vh ;
+    overflow: hidden;
+  }
+   .modal-lg, .modal-xl {
+    max-width: 90rem !important;
+   }
   @media (min-width: 1600px) {
     .row.hero-stats.text-center {
       max-width: 1320px;
@@ -1112,7 +1125,7 @@ html {
       font-size: 3.0rem;
     }
     .about_content {
-      padding: 3rem 2.2rem !important;
+      padding: 6rem 2rem !important;
     }
     .quote svg {
       width: 4.5rem;
@@ -1371,11 +1384,20 @@ html {
   }
 }
  @media  only screen and (max-width: 767px) {
+    .project-section-btn {
+    margin-bottom: 4rem;
+  } 
+   footer h5 {
+    font-size: 1.8rem !important;
+   }
     .tabs-menu {
       width: calc(100% - 4rem);
     }
   .tabs-menu-item {
     padding-inline: 1rem !important;
   }
-  
+      .btn {
+      --bs-btn-font-size: 1.6rem !important;
+      font-size: 1.6rem;
+    }
  }

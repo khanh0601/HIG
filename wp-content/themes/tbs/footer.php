@@ -188,7 +188,7 @@ $facebook = tr_options_field('tr_theme_options.facebook');
           />
         </svg>
       </a>
-      <div class="user">
+      <!-- <div class="user">
         <a href="javascript:void(0)" class="user_fixed">
           <svg
             width="50"
@@ -221,7 +221,7 @@ $facebook = tr_options_field('tr_theme_options.facebook');
             />
           </svg>
         </a>
-      </div>
+      </div> -->
     </footer>
 </body>
 </html>

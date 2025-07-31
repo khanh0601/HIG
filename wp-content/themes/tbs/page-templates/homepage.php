@@ -344,7 +344,7 @@ $logo_items = tr_posts_field('logo_items', $pageID);
     <p class="text-muted mb-4 px-lg-5">
       <?= wp_kses_post($home_ecosystem_desc) ?>
     </p>
-    <a href="<?= wp_kses_post($home_ecosystem_btn_link) ?>" class="btn btn-outline-dark mb-5 mt-4 px-4"><?= wp_kses_post($home_ecosystem_btn_txt) ?></a>
+    <a href="<?= wp_kses_post($home_ecosystem_btn_link) ?>" class="btn btn-outline-dark project-section-btn  mt-4 px-4"><?= wp_kses_post($home_ecosystem_btn_txt) ?></a>
     <div class="row projects_detail g-4">
       <?php
       if (is_array($ecosystem_items)) :
@@ -354,12 +354,14 @@ $logo_items = tr_posts_field('logo_items', $pageID);
           $img_url = wp_get_attachment_url($img_id); // Lấy URL ảnh từ ID
       ?>
           <div class="col-6 col-md-3">
-            <div class="project-box position-relative overflow-hidden">
-              <img
-                src="<?php echo esc_url($img_url); ?>"
-                class="img-fluid w-100 h-100 object-fit-cover"
-                alt="<?php echo esc_attr($title); ?>" />
-              <div class="project-title"><?php echo esc_html($title); ?></div>
+            <a  href="/gioi-thieu?tab=he_sinh_thai">
+              <div class="project-box position-relative overflow-hidden">
+                <img
+                  src="<?php echo esc_url($img_url); ?>"
+                  class="img-fluid w-100 h-100 object-fit-cover"
+                  alt="<?php echo esc_attr($title); ?>" />
+                <div class="project-title"><?php echo esc_html($title); ?></div>
+            </a>
             </div>
           </div>
       <?php
@@ -492,11 +494,19 @@ $logo_items = tr_posts_field('logo_items', $pageID);
       <!-- Bài viết 1 -->
       <?php
       $args = [
-        'post_type'      => 'post',
-        'posts_per_page' => 4,
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-      ];
+  'post_type'      => 'post',
+  'posts_per_page' => 4,
+  'orderby'        => 'date',
+  'order'          => 'DESC',
+  'meta_query'     => [
+    [
+      'key'     => '_show_on_homepage',
+      'value'   => 'yes',
+      'compare' => '='
+    ]
+  ]
+];
+
 
       $latest_posts = new WP_Query($args);
 
@@ -570,3 +580,9 @@ $logo_items = tr_posts_field('logo_items', $pageID);
   </div>
 </section>
 <?php get_footer(); ?>
+<script>
+  $('.right_brand_message .icon-box.text-center ').each((idx, item) => {
+    let width = $(item).outerWidth();
+    $(item).css('height', width)
+  })
+</script>

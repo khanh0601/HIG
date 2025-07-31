@@ -345,14 +345,7 @@ add_action('edit_form_after_title', function ($post) use ($editorSettings) {
         ]);
         echo endBox();
     }
-    else if ($post->post_type == 'post') {
-        $form = tr_form();
-        echo beginBox("Thông tin Chi tiết", true);
-        echo $form->text('thumb_des')->setLabel("Mô tả ngắn về hình đại diện");
-        echo $form->text('author_title')->setLabel("Tên tác giả");
-        
-        echo endBox();
-    }
+
     echo '</div>';
 });
 

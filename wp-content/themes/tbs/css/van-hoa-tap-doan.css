@@ -16,9 +16,6 @@
   height: 90vh;
 }
 
-#bannerTitle {
-  max-width: 500px;
-}
 
 /* Highway Section */
 .highway-container {
@@ -76,6 +73,7 @@
 }
 
 .highway-description-section {
+  text-align: justify;
   flex: 1;
   margin-left: 80px;
   color: white;
@@ -360,6 +358,7 @@
 
 .intro-section-description {
   font-size: 24px;
+  text-align: justify;
   font-weight: bold;
 }
 
@@ -390,9 +389,21 @@
 .development-section-sub-title {
   color: #1a3d54;
   flex: 1;
-  max-width: 400px;
+  max-width: 40rem;
 }
-
+.hero-content-wrap{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+.hero-content {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  opacity: 0;
+  transition: .4s ease all;
+  &.active  {
+    opacity: 1;
+  }
+}
 .development-section-sub-description {
   font-size: 24px;
   flex: 1;
@@ -801,6 +812,7 @@
 }
 
 .partner-intro-section-description {
+  text-align: justify;
   font-size: 1.8rem;
   color: #fff;
 }
@@ -1067,6 +1079,9 @@
 }
 
 @media (max-width: 767px) {
+   .partner-intro-section .kl-container {
+    padding-block: 6rem;
+   }
   .community-section-description, .development-section-sub-description {
     font-size: 1.6rem;
    }
@@ -1103,7 +1118,7 @@
   }
 
   .highway-content {
-    padding: 40px 0;
+    padding: 6rem 0;
   }
 
   .highway-block-title {

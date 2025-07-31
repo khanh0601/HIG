@@ -18,9 +18,19 @@ get_header();
         alt="Banner"
         class="w-100 img-banner"
       />
+      <div class="hero-content-wrap">
+        <div class="hero-content active kl-container text-left text-white">
+          <h5 class="fs-36">Văn Hoá Tập Đoàn</h5>
+          <h1 class="fs-56" id="bannerTitle">Văn Hoá<br />Doanh Nghiệp</h1>
+      </div>
       <div class="hero-content kl-container text-left text-white">
-        <h5 class="fs-36">Văn Hoá Tập Đoàn</h5>
-        <h1 class="fs-56" id="bannerTitle">Văn Hoá<br />Doanh Nghiệp</h1>
+          <h5 class="fs-36">Văn Hoá Tập Đoàn</h5>
+          <h1 class="fs-56" id="bannerTitle">TRÁCH NHIỆM<br />XÃ HỘI</h1>
+      </div>
+      <div class="hero-content kl-container text-left text-white">
+          <h5 class="fs-36">Văn Hoá Tập Đoàn</h5>
+          <h1 class="fs-56" id="bannerTitle">Đối Tác &<br> Khách Hàng</h1>
+      </div>
       </div>
       <nav class="tabs-menu">
         <ul class="tabs-menu-wrapper">
@@ -725,11 +735,12 @@ $(document).ready(function () {
     offset: 100,
   });
 
-  $('.tabs-menu-item-link').click(function () {
-    console.log('Tab clicked:', $(this).attr('href'));
-    console.log('Text:', $(this).text());
-    var navText = $(this).text();
-    $('#bannerTitle').text(navText);
+  $('.tabs-menu-item-link').click(function (e) {
+    e.preventDefault();
+    let index = $(this).closest('.tabs-menu-item').index();
+    console.log(index)
+    $('.hero-content').removeClass('active');
+    $('.hero-content').eq(index).addClass('active');
   });
 
   Marquee('.highway-watermark', 0.7);

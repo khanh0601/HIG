@@ -357,7 +357,7 @@
 
     .new__hero__menu__item__txt {
         font-size: 1.6rem;
-        padding: 1rem 2.4rem;
+        padding: 1.2rem 2.4rem;
         line-height: 1.2
     }
 
@@ -448,5 +448,8 @@
         &:after {
             opacity: .6;
         }
+    }
+    .new__hero__menu__item::after {
+        inset: 0;
     }
 }
