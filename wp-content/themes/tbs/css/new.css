@@ -1,6 +1,11 @@
 .new__hero__img img {
     aspect-ratio: 192/98;
 }
+.new__detail__content img{
+	    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .new__hero__inner {
     position: relative;
@@ -451,5 +456,8 @@
     }
     .new__hero__menu__item::after {
         inset: 0;
+    }
+    .new__hero__content__smalltitle {
+        grid-column: 1/-1;
     }
 }

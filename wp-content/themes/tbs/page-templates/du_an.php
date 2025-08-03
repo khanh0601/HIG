@@ -10,10 +10,13 @@
  * @subpackage tbs
  * @since tbs 1.0
  */
-wp_enqueue_style('van-hoa-style', get_template_directory_uri() . '/css/project.css', array(), '2.3.2');
+wp_enqueue_style('van-hoa-style', get_template_directory_uri() . '/css/project.css', array(), '2.3.4');
 get_header();
 $pageID = get_queried_object_id();
 $banner_items = tr_posts_field('banner_items', $pageID);
+$banner_label = tr_posts_field('banner_label', $pageID);
+$banner_desc = tr_posts_field('banner_desc', $pageID);
+$banner_btn = tr_posts_field('banner_btn', $pageID);
 $invest_banner_img = wp_get_attachment_url(tr_posts_field('invest_banner_img', $pageID));
 $invest_banner_label = tr_posts_field('invest_banner_label', $pageID);
 $invest_banner_title = tr_posts_field('invest_banner_title', $pageID);
@@ -44,7 +47,7 @@ $project_show_items = tr_posts_field('project_show_items', $pageID);
   <div class="kl-container">
     <div class="project_hero_content df_hide_onload">
       <div class="project_hero_content_inner">
-        <div class="project_hero_content_label subtitle__banner">Dự Án</div>
+        <div class="project_hero_content_label subtitle__banner"><?= wp_kses_post($banner_label) ?></div>
         <div class="project_hero_content_title_wrap">
 
           <?php
@@ -67,9 +70,9 @@ $project_show_items = tr_posts_field('project_show_items', $pageID);
           ?>
 
         </div>
-        <div class="project_hero_content_sub">Mỗi dự án không chỉ là một mô hình kinh doanh, mà còn là kết quả của tư duy dài hạn, năng lực triển khai thực tiễn và sự hợp tác chặt chẽ với các đối tác chiến lược trong và ngoài nước.</div>
-        <a href="" class="btn project_hero_content_btn" data-scroll="bds">
-          <span>Xem thêm</span>
+        <div class="project_hero_content_sub"><?= wp_kses_post($banner_desc) ?></div>
+        <a href="#project__realestate" class="btn project_hero_content_btn" data-scroll="bds">
+          <span><?= wp_kses_post($banner_btn) ?></span>
           <div class="project_hero_content_ic">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -166,7 +169,7 @@ $project_show_items = tr_posts_field('project_show_items', $pageID);
     </div>
   </div>
 </section>
-<section class="project__realestate">
+<section class="project__realestate" id = 'project__realestate'>
   <div class="project__realestate__menu">
     <div class="project__realestate__menu__inner">
       <?php
@@ -290,7 +293,7 @@ $project_show_items = tr_posts_field('project_show_items', $pageID);
         Hãy liên hệ với H Indochina Group để cùng nhau tạo dựng những giá trị bền vững và khác biệt.</div>
     </div>
     <div class="project__cta__right">
-      <a href="#" class="project__cta__right__contact">Liên Hệ</a>
+      <a href="/lien-he" class="project__cta__right__contact">Liên Hệ</a>
     </div>
   </div>
 </section>

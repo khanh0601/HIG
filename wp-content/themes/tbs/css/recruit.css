@@ -86,10 +86,12 @@
     ul {
         list-style: none;
         padding-left: 0;
+
         li {
             padding-left: 3.75rem;
             margin-bottom: .75rem;
             position: relative;
+
             &::after {
                 content: url(/wp-content/uploads/2025/07/icon-dot.svg);
                 width: 2.2rem;
@@ -546,21 +548,27 @@
         color: black;
         width: max-content;
         padding: .6rem 1.6rem;
+        position: absolute;
         margin-top: 1rem;
         text-transform: uppercase;
+        right: 0;
+        bottom: 2.4rem;
     }
-.recruit__benefit__left__des__txt {
-    & ul {
-        & li {
-            padding-left: 2.4rem;
-            &::after {
-                width: 1.6rem;
-                height: 1.6rem;
-                top: .3rem;
+
+    .recruit__benefit__left__des__txt {
+        & ul {
+            & li {
+                padding-left: 2.4rem;
+
+                &::after {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    top: .3rem;
+                }
             }
         }
     }
-}
+
     .recruit__opportunity__table__row__detail {
         margin-left: 0;
     }
@@ -653,7 +661,7 @@
         color: #55555593 !important;
         margin-right: 1rem;
         text-transform: uppercase;
-        min-width: 12rem;
+        min-width: 10rem;
         text-align: start;
     }
 
@@ -701,5 +709,9 @@
         right: 0;
         line-height: 2rem;
         color: #555
+    }
+
+    .recruit__opportunity__table__num.recruit__txt {
+        display: none;
     }
 }

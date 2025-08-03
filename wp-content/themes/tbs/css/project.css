@@ -372,6 +372,7 @@ position: relative;
         width: 60%;
     }
         .project__realestate__menu__item {
+        width: max-content !important;
         font-size: 1.4rem;
         padding: 1.4rem 1.2rem 1rem 1.2rem;
     }

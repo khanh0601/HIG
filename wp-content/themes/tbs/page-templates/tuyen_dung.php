@@ -10,7 +10,7 @@
  * @subpackage tbs
  * @since tbs 1.0
  */
-wp_enqueue_style('tuyen-dung-style', get_template_directory_uri() . '/css/recruit.css', [], '2.3.1');
+wp_enqueue_style('tuyen-dung-style', get_template_directory_uri() . '/css/recruit.css', [], '2.3.2');
 
 get_header();
 $pageID = get_queried_object_id();
@@ -80,7 +80,7 @@ $job_items = tr_posts_field('recruit_job_items',$pageID);
               <div class="recruit__opportunity__table__label">STT</div><?php echo str_pad($index, 2, '0', STR_PAD_LEFT); ?>
             </div>
             <div class="recruit__opportunity__table__pos recruit__txt">
-              <div class="recruit__opportunity__table__label">Vị trí tuyển dụng</div><?php echo esc_html($title); ?>
+             <?php echo esc_html($title); ?>
             </div>
             <div class="recruit__opportunity__table__date recruit__txt1">
               <div class="recruit__opportunity__table__label">Ngày hết hạn</div><?php echo esc_html($date); ?>

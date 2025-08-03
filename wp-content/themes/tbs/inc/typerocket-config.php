@@ -236,25 +236,25 @@ add_action('edit_form_after_title', function ($post) use ($editorSettings) {
             )
         ]);
         echo endBox();
-    } 
-    else if ($post->post_type == 'page' && basename(get_page_template()) == "tin_tuc.php") {
+    } else if ($post->post_type == 'page' && basename(get_page_template()) == "tin_tuc.php") {
         remove_post_type_support('page', 'editor');
 
         $form = tr_form();
         echo beginBox("Banner", true);
         echo $form->image('banner_img')->setLabel("Hình ảnh");
         echo endBox();
-    }
-    else if ($post->post_type == 'page' && basename(get_page_template()) == "du_an.php") {
+    } else if ($post->post_type == 'page' && basename(get_page_template()) == "du_an.php") {
         remove_post_type_support('page', 'editor');
 
         $form = tr_form();
         echo beginBox("Banner", true);
+        echo $form->text('banner_label')->setLabel("Tiêu đề phụ");
+        echo $form->editor('banner_desc')->setLabel("Nội dung");
+        echo $form->text('banner_btn')->setLabel("Chữ button");
         echo $form->repeater('banner_items')->setLabel("Card Items")->setFields([
             $form->image('img')->setLabel("Hình ảnh"),
             $form->text('title')->setLabel("Tiêu đề"),
         ]);
-        echo $form->editor('banner_desc')->setLabel("Nội dung");
         echo endBox();
         echo beginBox("Đầu tư đa ngành", true);
         echo $form->image('invest_banner_img')->setLabel("Hình ảnh");
@@ -269,8 +269,76 @@ add_action('edit_form_after_title', function ($post) use ($editorSettings) {
             $form->editor('title')->setLabel("Tiêu đề"),
         ]);
         echo endBox();
-    } 
-    else if ($post->post_type == 'page' && basename(get_page_template()) == "tuyen_dung.php") {
+    } else if ($post->post_type == 'page' && basename(get_page_template()) == "van_hoa_tap_doan.php") {
+        remove_post_type_support('page', 'editor');
+
+        $form = tr_form();
+        echo beginBox("Banner", true);
+        echo $form->file('banner_img')->setLabel("Video banner");
+        echo $form->text('banner_label')->setLabel("Tiêu đề phụ");
+        echo $form->text('banner_title1')->setLabel("Tiêu đề - Văn hóa doanh nghiệp");
+        echo $form->text('banner_title2')->setLabel("Tiêu đề - Trách nhiệm xã hội");
+        echo $form->text('banner_title3')->setLabel("Tiêu đề - Đối tác & khách hàng");
+        echo endBox();
+        echo beginBox("Highway - Văn hóa doanh nghiệp", true);
+        echo $form->text('highway_title')->setLabel("Tiêu đề");
+        echo $form->editor('highway_desc')->setLabel("Nội dung");
+        echo endBox();
+        echo beginBox("Cards - Văn hóa doanh nghiệp", true);
+        echo $form->repeater('card_items')->setLabel("Card Items")->setFields([
+            $form->image('img')->setLabel("Hình ảnh"),
+            $form->text('letter')->setLabel("Chữ cái tiêu đề"),
+            $form->text('label')->setLabel("Tiêu đề phụ"),
+            $form->text('title')->setLabel("Tiêu đề"),
+            $form->editor('sub')->setLabel("Nội dung"),
+        ]);
+        echo endBox();
+        echo beginBox("Mục đích - Trách nhiệm xã hội", true);
+        echo $form->text('purpose_title')->setLabel("Tiêu đề");
+        echo $form->editor('purpose_sub')->setLabel("Nội dung");
+        echo endBox();
+        echo beginBox("Phát triển - Trách nhiệm xã hội", true);
+        echo $form->text('develop_title_big')->setLabel("Tiêu đề lớn");
+        echo $form->text('develop_title_small')->setLabel("Tiêu đề");
+        echo $form->editor('develop_title_sub')->setLabel("Tiêu đề phụ");
+        echo $form->repeater('develop_item')->setLabel("Cards Item")->setFields([
+            $form->image('img')->setLabel("Icon"),
+            $form->text('title')->setLabel("Tiêu đề"),
+            $form->text('sub')->setLabel("Nội dung"),
+        ]);
+        echo endBox();
+        echo beginBox("Trách nhiệm - Trách nhiệm xã hội", true);
+        echo $form->text('responsibility_title')->setLabel("Tiêu đề ");
+        echo $form->text('responsibility_sub')->setLabel("Tiêu đề phụ");
+        echo $form->repeater('responsibility_items')->setLabel("Cards Item")->setFields([
+            $form->image('img')->setLabel("Icon"),
+            $form->image('img_big')->setLabel("Hình ảnh"),
+            $form->text('sub')->setLabel("Nội dung"),
+        ]);
+        echo endBox();
+        echo beginBox("Định hướng - Trách nhiệm xã hội", true);
+        echo $form->text('orientation_title')->setLabel("Tiêu đề ");
+        echo endBox();
+        echo beginBox("H Đông Dương - Đối tác & Khách hàng", true);
+        echo $form->text('dong_duong_title')->setLabel("Tiêu đề ");
+        echo $form->editor('dong_duong_sub')->setLabel("Nội dung ");
+        echo endBox();
+        echo beginBox("Đối tác - Đối tác & Khách hàng", true);
+        echo $form->text('partner_title')->setLabel("Tiêu đề ");
+        echo $form->repeater('partner_items')->setLabel("Cards Item")->setFields([
+            $form->image('img')->setLabel("Hình ảnh"),
+        ]);
+        echo endBox();
+        echo beginBox("Đồng hành - Đối tác & Khách hàng", true);
+        echo $form->text('companion_title')->setLabel("Tiêu đề ");
+        echo endBox();
+        echo beginBox("Khách hàng - Đối tác & Khách hàng", true);
+        echo $form->text('customer_title')->setLabel("Tiêu đề ");
+        echo $form->repeater('customer_items')->setLabel("Cards Item")->setFields([
+            $form->image('img')->setLabel("Hình ảnh"),
+        ]);
+        echo endBox();
+    } else if ($post->post_type == 'page' && basename(get_page_template()) == "tuyen_dung.php") {
         remove_post_type_support('page', 'editor');
 
         $form = tr_form();
@@ -294,8 +362,7 @@ add_action('edit_form_after_title', function ($post) use ($editorSettings) {
             $form->editor('desc')->setLabel("Mô tả"),
         ]);
         echo endBox();
-    } 
-    else if ($post->post_type == 'page' && basename(get_page_template()) == "lien_he.php") {
+    } else if ($post->post_type == 'page' && basename(get_page_template()) == "lien_he.php") {
         remove_post_type_support('page', 'editor');
 
         $form = tr_form();
@@ -304,8 +371,7 @@ add_action('edit_form_after_title', function ($post) use ($editorSettings) {
         echo $form->text('contact_banner_label')->setLabel("Tiêu đề phụ");
         echo $form->text('contact_banner_title')->setLabel("Tiêu đề");
         echo endBox();
-    } 
-    else if ($post->post_type == 'page' && basename(get_page_template()) == "quan_he_co_dong.php") {
+    } else if ($post->post_type == 'page' && basename(get_page_template()) == "quan_he_co_dong.php") {
         remove_post_type_support('page', 'editor');
         $form = tr_form();
         echo beginBox("Banner", true);
@@ -316,6 +382,7 @@ add_action('edit_form_after_title', function ($post) use ($editorSettings) {
         echo beginBox("Hồ sơ năng lực", true);
         echo $form->text('file_desc')->setLabel("Mô tả ngắn");
         echo $form->text('file_btn')->setLabel("Button Text");
+        echo $form->text('file_btn_link')->setLabel("Button Link");
         echo $form->text('file_title')->setLabel("Tiêu đề");
         echo $form->repeater('timeline_years')->setLabel("Dòng thời gian theo năm")->setFields([
             $form->text('year')->setLabel("Năm")->setHelp("VD: 2022"),

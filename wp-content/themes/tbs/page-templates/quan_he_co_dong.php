@@ -10,7 +10,7 @@
  * @subpackage tbs
  * @since tbs 1.0
  */
-wp_enqueue_style('quan-he-co-dong-style', get_template_directory_uri() . '/css/relationship.css', array(), '2.3.2');
+wp_enqueue_style('quan-he-co-dong-style', get_template_directory_uri() . '/css/relationship.css', array(), '2.3.4');
 
 get_header();
 $banner_img = wp_get_attachment_image_url(tr_posts_field('banner_img'), 'full');
@@ -21,6 +21,7 @@ $banner_title = tr_posts_field('banner_title');
 $file_desc = tr_posts_field('file_desc');
 $file_title = tr_posts_field('file_title');
 $file_btn = tr_posts_field('file_btn');
+$file_btn_link = tr_posts_field('file_btn_link');
 $timeline = tr_posts_field('timeline_years');
 ?>
 <section class="relationship__hero">
@@ -44,9 +45,9 @@ $timeline = tr_posts_field('timeline_years');
     <div class="relationship__content__hero__left">
       <?php echo esc_html($file_desc); ?>
     </div>
-    <div class="relationship__content__hero__right">
+    <a href="<?php echo $file_btn_link; ?>" class="relationship__content__hero__right">
       <?php echo esc_html($file_btn); ?>
-    </div>
+</a>
   </div>
   <div class="relationship__content__history">
     <div class="relationship__content__history__title txt-poppin">

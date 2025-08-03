@@ -132,6 +132,11 @@ if (have_posts()) :
                 </div>
             </div>
         </section>
+        <section class="">
+            <div class="kl-container">
+                <div class="project_exprect" style="margin-top: 4rem"><?= get_the_excerpt() ?></div>
+            </div>
+        </section>
         <section class="project__detail__other">
             <div class="project__detail__other__subtitle subtitle__section">Dự Án</div>
             <div class="project__detail__other__smalltitle title__section">Các Dự Án Khác</div>

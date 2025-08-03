@@ -10,8 +10,8 @@
  * @subpackage tbs
  * @since tbs 1.0
  */
-wp_enqueue_style('about-style', get_template_directory_uri() . '/css/about-us.css', array(), '2.3.4');
-wp_enqueue_style('gioi-thieu-style', get_template_directory_uri() . '/css/gioi-thieu.css', array(), '2.3.5');
+wp_enqueue_style('about-style', get_template_directory_uri() . '/css/about-us.css', array(), '2.3.12');
+wp_enqueue_style('gioi-thieu-style', get_template_directory_uri() . '/css/gioi-thieu.css', array(), '2.3.8');
 get_header();
 $pageID = get_queried_object_id();
 $about_banner_img = wp_get_attachment_url(tr_posts_field('about_banner_img', $pageID));
@@ -433,7 +433,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
         if (!empty($about_team5_items)) :
           foreach ($about_team5_items as $member) :
             $name     = esc_html($member['name']);
-            $position = esc_html($member['position']);
+            $position = $member['position'];
             $title = esc_html($member['title']);
             $img      = wp_get_attachment_image_url($member['img'], 'full');
             $slug     = sanitize_title($name); // Tạo slug từ tên để làm ID modal
@@ -445,7 +445,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
               data-position = "<?php echo esc_attr($position); ?>"
               data-img-url="<?php echo esc_attr($img); ?>">
               <div class="manage-name"><?php echo $name; ?></div>
-              <div class="manage-position"><?php echo nl2br($position); ?></div>
+              <div class="manage-position"> <?= wp_kses_post($position) ?></div>
               <div class="manage-arrow"
                 data-bs-toggle="modal"
                 data-bs-target="#profileModal<?php echo ucfirst($slug); ?>">
@@ -484,7 +484,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
         $counter = 1;
         if (!empty($about_hdongduong_items)) :
           foreach ($about_hdongduong_items as $index => $item) :
-            $title = esc_html($item['title']);
+            $title = $item['title'];
             $img_url = isset($item['img']) ? wp_get_attachment_image_url($item['img'], 'full') : '';
             $target = 'investment-' . $counter.'-container'; 
         ?>
@@ -494,7 +494,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
               </div>
 
               <div class="bio-system-card-title">
-                <?php echo nl2br($title); ?>
+                <?php echo $title; ?>
               </div>
 
               <div class="bio-system-card-arrow" >
@@ -520,7 +520,7 @@ $about_field_items = tr_posts_field('about_field_items', $pageID);
   $counter = 1;
   if (!empty($about_field_items)) :
     foreach ($about_field_items as $index => $item) :
-      $title   = esc_html($item['title']);
+      $title   = $item['title'];
       $content = wp_kses_post($item['content']);
       $team1   = $item['team1'];
       $team2   = $item['team2'];

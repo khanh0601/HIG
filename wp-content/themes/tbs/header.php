@@ -32,11 +32,11 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/style.css?v=<?= SITE_VERSION ?>">
       <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<style>
-    .df_hide_onload {
-  opacity: 0;
-}
-</style>
+      <style>
+          .df_hide_onload {
+              opacity: 0;
+          }
+      </style>
 
       <?php
         $currentLang = get_locale();
@@ -92,6 +92,9 @@
       <?php
         $logo = wp_get_attachment_url(tr_options_field('tr_theme_options.logo')); // hoặc get_custom_logo()
         $menu_items = wp_get_nav_menu_items(get_nav_menu_locations()['primary'] ?? '');
+        if (!is_array($menu_items)) {
+            $menu_items = []; // fallback nếu không có menu
+        }
         $half = ceil(count($menu_items) / 2);
         $menu_left = array_slice($menu_items, 0, $half);
         $menu_right = array_slice($menu_items, $half);
@@ -134,10 +137,20 @@
                                       <img src="/wp-content/uploads/2025/07/arrow-down.svg" alt="">
                                   </div>
                               </div>
+                              <?php
+                                if (function_exists('pll_the_languages')) {
+                                    $languages = pll_the_languages([
+                                        'raw' => 1,
+                                        'hide_current' => 1, // ẩn ngôn ngữ hiện tại
+                                    ]);
+                                }
+                                ?>
                               <div class="nav-item-lang-menu">
-                                  <a href="/" class="nav-item-lang-menu-item">VN</a>
-                                  <a href="/" class="nav-item-lang-menu-item">EN</a>
-                                  <a href="/" class="nav-item-lang-menu-item">JP</a>
+                                  <?php foreach ($languages as $lang): ?>
+                                      <a href="<?= esc_url($lang['url']) ?>" class="nav-item-lang-menu-item">
+                                          <?= esc_html(strtoupper($lang['slug'])) ?>
+                                      </a>
+                                  <?php endforeach; ?>
                               </div>
                           </div>
                       </li>
@@ -162,13 +175,13 @@
                   <a href="/" class="nav-item-lang-menu-item">JP</a>
               </div>
           </div>
-         
+
           <div class="mobile-logo w-100 d-xl-none">
               <a href="<?= esc_url(home_url('/')) ?>">
                   <img src="<?= esc_url($logo) ?>" alt="logo" />
               </a>
           </div>
-           <div class="mobile-menu-toggle d-xl-none">
+          <div class="mobile-menu-toggle d-xl-none">
               <div class="bar1"></div>
               <div class="bar2"></div>
               <div class="bar3"></div>
